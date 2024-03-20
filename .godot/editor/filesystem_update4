@@ -1,0 +1,3 @@
+res://shaders/armor_shader.gdshader
+res://scenes/player/player.tscn
+res://scripts/titan_controller.gd

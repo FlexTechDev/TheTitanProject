@@ -1,0 +1,17 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1710946222
+icon.svg::CompressedTexture2D::5740761102622338059::1710946176::1710946194::1::::<><>::
+::res://assets/::1710946540
+::res://assets/titan/::1710946617
+Titan.png::CompressedTexture2D::144389878344208976::1710946602::1710946634::1::::<><>::
+TitanHands.png::CompressedTexture2D::5268613065463360258::1710946617::1710946634::1::::<><>::
+::res://assets/titan/shoulders/::1710946630
+TitanShoulderDefault.png::CompressedTexture2D::2104008400657224482::1710946630::1710946634::1::::<><>::
+::res://assets/ui/::1710946548
+::res://assets/ui/customization/::1710946568
+ColorPallete.png::CompressedTexture2D::1442711961313090356::1710946566::1710946568::1::::<><>::
+::res://materials/::1710946222
+::res://scenes/::1710946202
+::res://scripts/::1710946209
+::res://shaders/::1710946500
+armor_shader.gdshader::Shader::-1::1710946500::0::1::::<><>::
