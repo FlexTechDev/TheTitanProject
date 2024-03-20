@@ -2,9 +2,8 @@ extends Node
 
 class_name TitanInputController;
 
-var last_x_scale: float = 1;
-
 @export var titan_controller: TitanController
+@export var titan_inventory_manager: TitanInventoryManager;
 
 func _input(event: InputEvent) -> void:
 	if(event is InputEventKey):
@@ -12,12 +11,16 @@ func _input(event: InputEvent) -> void:
 		
 		titan_controller.move(input_vector);
 		
-		if(event.is_action_pressed("left") and last_x_scale == 1):
-			titan_controller.scale.x = -1;
-			last_x_scale = -1;
-		if(event.is_action_pressed("right") and last_x_scale == -1):
-			titan_controller.scale.x = -1;
-			last_x_scale = 1;
-		
 		if(event.is_action_pressed("jump")):
 			titan_controller.try_jump();
+		
+		if(event.is_action_pressed("interact")):
+			titan_inventory_manager.try_pick_up();
+		if(event.is_action_pressed("drop")):
+			titan_inventory_manager.try_drop();
+		
+	if(event is InputEventMouseButton):
+		if(event.is_action_pressed("shoot") and titan_inventory_manager.active_weapon != null):
+			titan_inventory_manager.active_weapon.start_shoot();
+		if(event.is_action_released("shoot") and titan_inventory_manager.active_weapon != null):
+			titan_inventory_manager.active_weapon.stop_shoot();

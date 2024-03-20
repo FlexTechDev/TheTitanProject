@@ -1,7 +1,12 @@
+WeaponController
+Node2D
+Node
+Bullet
+TitanInventoryManager
+CollisionShape2D
 Sprite2D
 TitanVisualManager
 TitanCamera
 TitanInputController
 TitanAnimator
-CollisionShape2D
 TitanController

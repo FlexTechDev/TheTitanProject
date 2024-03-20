@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://ccf4pxcrfwi4q"]
+[gd_scene load_steps=19 format=3 uid="uid://ccf4pxcrfwi4q"]
 
 [ext_resource type="Script" path="res://scripts/titan_controller.gd" id="1_x3jne"]
 [ext_resource type="Shader" path="res://shaders/armor_shader.gdshader" id="2_bt7i8"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://scripts/titan_visual_manager.gd" id="5_famkg"]
 [ext_resource type="Resource" uid="uid://c2oyy8xlm3ksi" path="res://assets/titan/visuals/default_blue.tres" id="6_haykm"]
 [ext_resource type="Texture2D" uid="uid://48gyf4strst3" path="res://assets/titan/shoulders/TitanShoulderDefault.png" id="6_rufmb"]
+[ext_resource type="Script" path="res://scripts/titan_inventory_manager.gd" id="7_bnpmr"]
 [ext_resource type="Texture2D" uid="uid://chcfj1jkv2lx7" path="res://assets/titan/TitanHands.png" id="7_fyjp2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rr5fh"]
@@ -49,6 +50,9 @@ shader_parameter/primary_color = null
 shader_parameter/secondary_color = null
 shader_parameter/tertiary_color = null
 shader_parameter/visor_color = null
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xkkfm"]
+radius = 40.0
 
 [node name="Node2D" type="Node2D"]
 
@@ -94,6 +98,13 @@ position = Vector2(4, 2)
 texture = ExtResource("6_rufmb")
 flip_h = true
 
+[node name="HoldingPoint" type="Area2D" parent="TitanController/TitanAnimator"]
+position = Vector2(2, 2)
+script = ExtResource("7_bnpmr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TitanController/TitanAnimator/HoldingPoint"]
+shape = SubResource("CircleShape2D_xkkfm")
+
 [node name="TitanVisualManager" type="Node" parent="TitanController" node_paths=PackedStringArray("sprite", "left_hand_sprite", "right_hand_sprite", "left_shoulder_sprite", "right_shoulder_sprite")]
 script = ExtResource("5_famkg")
 sprite = NodePath("../TitanAnimator")
@@ -104,11 +115,15 @@ right_shoulder_sprite = NodePath("../TitanAnimator/RightShoulder")
 shoulder_texture = ExtResource("6_rufmb")
 current_visual_asset = ExtResource("6_haykm")
 
-[node name="TitanInputController" type="Node" parent="." node_paths=PackedStringArray("titan_controller")]
+[node name="TitanInputController" type="Node" parent="." node_paths=PackedStringArray("titan_controller", "titan_inventory_manager")]
 script = ExtResource("3_xg8r0")
 titan_controller = NodePath("../TitanController")
+titan_inventory_manager = NodePath("../TitanController/TitanAnimator/HoldingPoint")
 
 [node name="TitanCamera" type="Camera2D" parent="." node_paths=PackedStringArray("target")]
 zoom = Vector2(3, 3)
 script = ExtResource("5_7hkgx")
 target = NodePath("../TitanController")
+
+[connection signal="area_entered" from="TitanController/TitanAnimator/HoldingPoint" to="TitanController/TitanAnimator/HoldingPoint" method="_on_area_entered"]
+[connection signal="area_exited" from="TitanController/TitanAnimator/HoldingPoint" to="TitanController/TitanAnimator/HoldingPoint" method="_on_area_exited"]
