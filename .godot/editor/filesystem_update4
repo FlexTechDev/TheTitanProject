@@ -1,12 +1,10 @@
 res://scenes/player/player.tscn
 res://shaders/armor_shader.gdshader
-res://scripts/titan_animator.gd
 res://assets/titan/titan_frames.tres
-res://scripts/titan_controller.gd
-res://scripts/titan_input_controller.gd
 res://scenes/testing/playground.tscn
 res://scripts/titan_camera_controller.gd
-res://scripts/titan_visual_manager.gd
-res://scripts/resources/titan_visual.gd
-res://assets/titan/visuals/default_red.tres
-res://assets/titan/visuals/default_blue.tres
+res://scripts/weapon_controller.gd
+res://scripts/weapon_function.gd
+res://scripts/resources/AA12_weapon_function.gd
+res://scripts/resources/weapon_function.gd
+res://scripts/bullet.gd
