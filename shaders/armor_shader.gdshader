@@ -6,20 +6,26 @@ uniform vec4 tertiary_color: source_color;
 uniform vec4 visor_color: source_color;
 
 void fragment() {
+	if(COLOR.a != 1.0)
+	{
+		discard;
+	}
 	if(COLOR.r == COLOR.g && COLOR.r == COLOR.b)
 	{
-		COLOR = visor_color;
+		COLOR = visor_color * COLOR;
 	}
-	else if(COLOR.r > COLOR.g && COLOR.r == COLOR.b)
+	else if(COLOR.r > COLOR.g && COLOR.r > COLOR.b)
 	{
-		COLOR = primary_color;
+		COLOR = primary_color * COLOR.r;
 	}
 	else if(COLOR.g > COLOR.r && COLOR.g > COLOR.b)
 	{
-		COLOR = secondary_color;
+		COLOR = secondary_color * COLOR.g;
 	}
 	else if(COLOR.b > COLOR.r && COLOR.b > COLOR.g)
 	{
-		COLOR = tertiary_color;
+		COLOR = tertiary_color * COLOR.b;
 	}
+	
+	COLOR.a = 1.0;
 }

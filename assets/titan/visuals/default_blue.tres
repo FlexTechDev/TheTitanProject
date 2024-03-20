@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="TitanVisual" load_steps=2 format=3 uid="uid://c2oyy8xlm3ksi"]
+
+[ext_resource type="Script" path="res://scripts/resources/titan_visual.gd" id="1_fi3mv"]
+
+[resource]
+script = ExtResource("1_fi3mv")
+primary_color = Color(0.337255, 0.337255, 0.337255, 1)
+secondary_color = Color(0.223529, 0.223529, 0.223529, 1)
+tertiary_color = Color(0.345098, 0.419608, 0.647059, 1)
+visor_color = Color(0, 0.584314, 0.941176, 1)
