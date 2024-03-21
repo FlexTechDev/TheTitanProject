@@ -12,7 +12,7 @@ muzzle_flash = ExtResource("2_xk1xd")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xbb1h"]
 size = Vector2(22, 6)
 
-[node name="AA12AssaultRifle" type="Area2D" node_paths=PackedStringArray("chamber_location", "barrel_location", "right_hand_position", "left_hand_position")]
+[node name="R5Railgun" type="Area2D" node_paths=PackedStringArray("chamber_location", "barrel_location", "right_hand_position", "left_hand_position")]
 script = ExtResource("1_wwfm6")
 weapon_function = SubResource("Resource_ybumr")
 chamber_location = NodePath("Chamber")

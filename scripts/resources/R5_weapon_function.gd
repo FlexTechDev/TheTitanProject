@@ -21,7 +21,7 @@ func _start_shoot(weapon_controller: WeaponController) -> void:
 	
 	await weapon_controller.get_tree().create_timer(charge_time).timeout;
 	
-	fire();
+	fire(weapon_controller);
 
 func _stop_shoot(weapon_controller: WeaponController) -> void:
 	super._stop_shoot(weapon_controller);
@@ -44,9 +44,12 @@ func _reload(weapon_controller: WeaponController) -> void:
 func _manual_process(delta: float) -> void:
 	super._manual_process(delta);
 
-func fire() -> void:
+func fire(weapon_controller: WeaponController) -> void:
 	if(!charging):
 		return;
+	
+	var direction = Vector2(cos(weapon_controller.global_rotation), sin(weapon_controller.global_rotation));
+	weapon_controller.parent_titan_camera.shake(40, -direction);
 	
 	var muzzle_flash_instance: GPUParticles2D = muzzle_flash.instantiate();
 	weapon_controller.get_tree().current_scene.add_child(muzzle_flash_instance);

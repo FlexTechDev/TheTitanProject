@@ -6,6 +6,7 @@ var parent_titan_camera: TitanCamera;
 
 var can_shoot: bool = true;
 
+@export var aim_time: float = 8;
 @export var weapon_function: WeaponFunction;
 @export var chamber_location: Node2D;
 @export var barrel_location: Node2D;

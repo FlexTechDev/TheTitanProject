@@ -56,12 +56,15 @@ func _reload(weapon_controller: WeaponController) -> void:
 	
 	self.weapon_controller = weapon_controller;
 	
+	add_ammo(weapon_controller);
+
+func add_ammo(weapon_controller: WeaponController) -> void:
 	await weapon_controller.get_tree().create_timer(reload_time_per_shell).timeout;
 	
 	current_ammo += 1;
 	
 	if(reloading):
-		_reload(weapon_controller);
+		add_ammo(weapon_controller);
 	else:
 		weapon_controller._on_reload_end();
 

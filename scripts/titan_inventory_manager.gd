@@ -26,6 +26,6 @@ func _on_area_exited(body: Area2D) -> void:
 		pickupable_weapon = null;
 
 func _process(delta: float) -> void:
-	var direction_to_mouse: float = get_parent().get_angle_to(get_global_mouse_position());
-	
-	rotation = direction_to_mouse;
+	if(active_weapon != null):
+		var direction_to_mouse: float = get_parent().get_angle_to(get_global_mouse_position());
+		rotation = lerp(rotation, direction_to_mouse, delta * active_weapon.aim_time);

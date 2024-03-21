@@ -26,6 +26,8 @@ point_count = 3
 curve = SubResource("Curve_8ggpm")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_5jmkv"]
+emission_shape = 1
+emission_sphere_radius = 3.0
 particle_flag_disable_z = true
 spread = 35.0
 gravity = Vector3(0, 0, 0)
