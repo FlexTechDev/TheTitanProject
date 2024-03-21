@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cgpr7wbqcy8uy"]
+[gd_scene load_steps=9 format=3 uid="uid://cgpr7wbqcy8uy"]
 
 [ext_resource type="Script" path="res://scripts/misc/particles_destroy.gd" id="1_qrnvh"]
 
@@ -8,6 +8,15 @@ colors = PackedColorArray(0.809651, 0.462173, 0.0806873, 1, 0.807843, 0.462745, 
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_ainaj"]
 gradient = SubResource("Gradient_dkfgk")
+
+[sub_resource type="Curve" id="Curve_qnbyu"]
+min_value = -200.0
+max_value = 200.0
+_data = [Vector2(0, 200), 0.0, 0.0, 0, 0, Vector2(0.991573, -200), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_3q2qc"]
+curve = SubResource("Curve_qnbyu")
 
 [sub_resource type="Curve" id="Curve_8ggpm"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.502809, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -24,6 +33,7 @@ initial_velocity_min = 70.0
 initial_velocity_max = 80.0
 orbit_velocity_min = 0.0
 orbit_velocity_max = 0.0
+linear_accel_curve = SubResource("CurveTexture_3q2qc")
 scale_curve = SubResource("CurveTexture_i8y6u")
 color_ramp = SubResource("GradientTexture1D_ainaj")
 turbulence_enabled = true
@@ -34,7 +44,7 @@ turbulence_noise_scale = 1.0
 emitting = false
 amount = 25
 process_material = SubResource("ParticleProcessMaterial_5jmkv")
-lifetime = 0.3
+lifetime = 0.15
 one_shot = true
 explosiveness = 1.0
 script = ExtResource("1_qrnvh")

@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://msij3nha7mdy"]
+[gd_scene load_steps=5 format=3 uid="uid://msij3nha7mdy"]
 
 [ext_resource type="PackedScene" uid="uid://ccf4pxcrfwi4q" path="res://scenes/player/player.tscn" id="1_yl2nx"]
 [ext_resource type="PackedScene" uid="uid://dv77u831emsml" path="res://scenes/weapons/AA12/AA12AssaultRifle.tscn" id="2_26055"]
+[ext_resource type="Environment" uid="uid://juwlww48vluh" path="res://assets/vfx/playground_environment.tres" id="3_85k8e"]
+[ext_resource type="PackedScene" uid="uid://c7bn6l80vmnm4" path="res://scenes/weapons/AA12/BB32BattleRifle.tscn" id="4_s2wxu"]
 
 [node name="playground" type="Node2D"]
 
@@ -10,3 +12,9 @@ position = Vector2(265, 118)
 
 [node name="AA12AssaultRifle" parent="." instance=ExtResource("2_26055")]
 position = Vector2(286, 113)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("3_85k8e")
+
+[node name="BB32BattleRifle" parent="." instance=ExtResource("4_s2wxu")]
+position = Vector2(339, 111)
