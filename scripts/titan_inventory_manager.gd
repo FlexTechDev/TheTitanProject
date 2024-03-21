@@ -3,8 +3,9 @@ extends Area2D
 class_name TitanInventoryManager;
 
 var pickupable_weapon: WeaponController;
-
 var active_weapon: WeaponController;
+
+@export var titan_camera: TitanCamera;
 
 func try_pick_up() -> void:
 	if(pickupable_weapon != null):

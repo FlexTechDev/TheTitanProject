@@ -5,6 +5,7 @@ class_name TitanController;
 var z_velocity: float = 0;
 var z_position: float = 0;
 var in_air: bool = false;
+var on_floor: bool = true;
 var last_movement_input: Vector2 = Vector2.ZERO;
 
 @onready var true_position: Vector2 = position;
@@ -14,8 +15,10 @@ var last_movement_input: Vector2 = Vector2.ZERO;
 @export var jump_force: float = 100;
 
 func try_jump() -> void:
-	z_velocity = jump_force;
-	in_air = true;
+	if(on_floor):
+		z_velocity = jump_force;
+		in_air = true;
+		on_floor = false;
 
 func move(input_vector: Vector2) -> void:
 	velocity = input_vector * move_speed * get_process_delta_time();
@@ -31,6 +34,7 @@ func _physics_process(delta: float) -> void:
 		in_air = false;
 		z_position = 0;
 		z_velocity = 0;
+		on_floor = true;
 	
 	position.y = true_position.y - z_position;
 

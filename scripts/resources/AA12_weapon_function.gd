@@ -6,7 +6,7 @@ var mag_ammo: int = 24;
 var current_ammo: int = mag_ammo;
 var bullet_speed: float = 1000;
 var shooting: bool = false;
-var fire_rate: float = 10;
+var fire_rate: float = 100;
 
 var weapon_controller: WeaponController;
 
@@ -37,6 +37,8 @@ func _reload(weapon_controller: WeaponController) -> void:
 
 func fire() -> void:
 	if(shooting):
+		weapon_controller.parent_titan_camera.shake(1);
+		
 		var bullet_instance: Bullet = bullet.instantiate();
 		weapon_controller.get_tree().current_scene.add_child(bullet_instance);
 		
@@ -47,7 +49,7 @@ func fire() -> void:
 		
 		current_ammo -= 1;
 		
-		await weapon_controller.get_tree().create_timer(fire_rate/60).timeout;
+		await weapon_controller.get_tree().create_timer(5/fire_rate).timeout;
 		
 		fire();
 

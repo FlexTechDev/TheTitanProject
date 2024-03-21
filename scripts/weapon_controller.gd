@@ -2,6 +2,8 @@ extends Area2D
 
 class_name WeaponController;
 
+var parent_titan_camera: TitanCamera;
+
 @export var weapon_function: WeaponFunction;
 @export var chamber_location: Node2D;
 @export var barrel_location: Node2D;
@@ -10,6 +12,8 @@ class_name WeaponController;
 
 func pick_up(hands: Node2D) -> void:
 	position = hands.position;
+	
+	parent_titan_camera = hands.titan_camera;
 	
 	get_parent().remove_child(self);
 	hands.add_child(self);
@@ -20,6 +24,8 @@ func drop() -> void:
 	
 	get_parent().remove_child(self);
 	scene.add_child(self);
+	
+	parent_titan_camera = null;
 	
 	global_position = last_position;
 	rotation = 0;

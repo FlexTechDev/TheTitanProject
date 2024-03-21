@@ -7,10 +7,10 @@
 [ext_resource type="Script" path="res://scripts/titan_input_controller.gd" id="3_xg8r0"]
 [ext_resource type="Script" path="res://scripts/titan_camera_controller.gd" id="5_7hkgx"]
 [ext_resource type="Script" path="res://scripts/titan_visual_manager.gd" id="5_famkg"]
-[ext_resource type="Resource" uid="uid://c2oyy8xlm3ksi" path="res://assets/titan/visuals/default_blue.tres" id="6_haykm"]
 [ext_resource type="Texture2D" uid="uid://48gyf4strst3" path="res://assets/titan/shoulders/TitanShoulderDefault.png" id="6_rufmb"]
 [ext_resource type="Script" path="res://scripts/titan_inventory_manager.gd" id="7_bnpmr"]
 [ext_resource type="Texture2D" uid="uid://chcfj1jkv2lx7" path="res://assets/titan/TitanHands.png" id="7_fyjp2"]
+[ext_resource type="Resource" uid="uid://d3mvfwp0g51qa" path="res://assets/titan/visuals/default_space_marine.tres" id="9_l4fy0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rr5fh"]
 size = Vector2(8, 17)
@@ -21,34 +21,34 @@ shader = ExtResource("2_bt7i8")
 shader_parameter/primary_color = Color(0.466667, 0.466667, 0.466667, 1)
 shader_parameter/secondary_color = Color(0, 0.631373, 0.85098, 1)
 shader_parameter/tertiary_color = Color(0.0784314, 0.501961, 1, 1)
-shader_parameter/visor_color = Color(0.85098, 0.160784, 0.301961, 1)
+shader_parameter/visor_color = Color(0.909804, 0.501961, 0, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_f680j"]
 shader = ExtResource("2_bt7i8")
 shader_parameter/primary_color = null
-shader_parameter/secondary_color = null
+shader_parameter/secondary_color = Color(0.396078, 0.396078, 0.396078, 1)
 shader_parameter/tertiary_color = null
 shader_parameter/visor_color = null
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ab760"]
 shader = ExtResource("2_bt7i8")
 shader_parameter/primary_color = null
-shader_parameter/secondary_color = null
-shader_parameter/tertiary_color = null
+shader_parameter/secondary_color = Color(0.392157, 0.392157, 0.392157, 1)
+shader_parameter/tertiary_color = Color(0.486275, 0.486275, 0.486275, 1)
 shader_parameter/visor_color = null
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rbixd"]
 shader = ExtResource("2_bt7i8")
 shader_parameter/primary_color = null
-shader_parameter/secondary_color = null
+shader_parameter/secondary_color = Color(0.415686, 0.415686, 0.415686, 1)
 shader_parameter/tertiary_color = null
 shader_parameter/visor_color = null
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2nknd"]
 shader = ExtResource("2_bt7i8")
 shader_parameter/primary_color = null
-shader_parameter/secondary_color = null
-shader_parameter/tertiary_color = null
+shader_parameter/secondary_color = Color(0.439216, 0.439216, 0.439216, 1)
+shader_parameter/tertiary_color = Color(0.431373, 0.431373, 0.431373, 1)
 shader_parameter/visor_color = null
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xkkfm"]
@@ -98,9 +98,10 @@ position = Vector2(4, 2)
 texture = ExtResource("6_rufmb")
 flip_h = true
 
-[node name="HoldingPoint" type="Area2D" parent="TitanController/TitanAnimator"]
+[node name="HoldingPoint" type="Area2D" parent="TitanController/TitanAnimator" node_paths=PackedStringArray("titan_camera")]
 position = Vector2(2, 2)
 script = ExtResource("7_bnpmr")
+titan_camera = NodePath("../../../TitanCamera")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TitanController/TitanAnimator/HoldingPoint"]
 shape = SubResource("CircleShape2D_xkkfm")
@@ -113,7 +114,7 @@ right_hand_sprite = NodePath("../TitanAnimator/RightHand")
 left_shoulder_sprite = NodePath("../TitanAnimator/LeftShoulder")
 right_shoulder_sprite = NodePath("../TitanAnimator/RightShoulder")
 shoulder_texture = ExtResource("6_rufmb")
-current_visual_asset = ExtResource("6_haykm")
+current_visual_asset = ExtResource("9_l4fy0")
 
 [node name="TitanInputController" type="Node" parent="." node_paths=PackedStringArray("titan_controller", "titan_inventory_manager")]
 script = ExtResource("3_xg8r0")
