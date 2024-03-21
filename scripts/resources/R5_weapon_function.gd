@@ -63,6 +63,10 @@ func fire(weapon_controller: WeaponController) -> void:
 	var railgun_bullet_instance: RailgunBullet = railgun_bullet.instantiate();
 	weapon_controller.get_tree().current_scene.add_child(railgun_bullet_instance);
 	
-	var point: Vector2 = weapon_controller.get_node("RayCast2D").get_collision_point();
-	if(point != null):
-		railgun_bullet_instance.place(weapon_controller.barrel_location.global_position, point, 2.5);
+	var raycast: RayCast2D = weapon_controller.get_node("RayCast2D");
+	if(raycast.get_collision_point() != null):
+		railgun_bullet_instance.place(weapon_controller.barrel_location.global_position, raycast.get_collision_point(), 2.5);
+		
+		if(raycast.get_collider() is DummyController):
+			var health_component: TitanHealthComponent = raycast.get_collider().get_node("TitanHealthComponent");
+			health_component.take_damage(40);

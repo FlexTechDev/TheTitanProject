@@ -17,3 +17,5 @@ shape = SubResource("RectangleShape2D_s6fpx")
 modulate = Color(0.952941, 0.584314, 0.309804, 1)
 texture_filter = 1
 texture = ExtResource("2_0v0f6")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

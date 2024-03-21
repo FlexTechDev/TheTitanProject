@@ -10,3 +10,11 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	global_position += velocity * delta;
+
+
+func _on_body_entered(body: Node2D) -> void:
+	if(body is DummyController):
+		var health_component: TitanHealthComponent = body.get_node("TitanHealthComponent");
+		health_component.take_damage(5);
+		
+		queue_free();

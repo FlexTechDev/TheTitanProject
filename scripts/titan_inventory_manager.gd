@@ -27,5 +27,5 @@ func _on_area_exited(body: Area2D) -> void:
 
 func _process(delta: float) -> void:
 	if(active_weapon != null):
-		var direction_to_mouse: float = get_parent().get_angle_to(get_global_mouse_position());
-		rotation = lerp(rotation, direction_to_mouse, delta * active_weapon.aim_time);
+		var direction_to_mouse: float = global_position.angle_to_point(get_global_mouse_position());
+		global_rotation = lerp_angle(global_rotation, direction_to_mouse, delta * active_weapon.aim_time);

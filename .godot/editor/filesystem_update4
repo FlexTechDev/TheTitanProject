@@ -1,4 +1,16 @@
 res://scenes/player/player.tscn
 res://shaders/armor_shader.gdshader
 res://assets/titan/titan_frames.tres
+res://scripts/titan_camera_controller.gd
 res://scenes/testing/playground.tscn
+res://scripts/titan_aim_manager.gd
+res://scripts/titan_inventory_manager.gd
+res://scenes/testing/dummy.tscn
+res://assets/titan/dummy_frames.tres
+res://scripts/misc/dummy_controller.gd
+res://scripts/titan_health_component.gd
+res://scripts/bullet.gd
+res://scenes/weapons/bullets/standard_bullet.tscn
+res://scenes/weapons/bullets/standard_pellet.tscn
+res://scripts/railgun_bullet.gd
+res://scripts/resources/R5_weapon_function.gd

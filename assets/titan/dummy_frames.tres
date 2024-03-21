@@ -1,0 +1,51 @@
+[gd_resource type="SpriteFrames" load_steps=7 format=3 uid="uid://dego1uy7r1730"]
+
+[ext_resource type="Texture2D" uid="uid://beymf5mi5w42s" path="res://assets/titan/Dummy.png" id="1_u8iq0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ny1g"]
+atlas = ExtResource("1_u8iq0")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4oe1f"]
+atlas = ExtResource("1_u8iq0")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j612x"]
+atlas = ExtResource("1_u8iq0")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qbxjo"]
+atlas = ExtResource("1_u8iq0")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rj6dw"]
+atlas = ExtResource("1_u8iq0")
+region = Rect2(0, 0, 32, 32)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ny1g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4oe1f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j612x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qbxjo")
+}],
+"loop": false,
+"name": &"hit",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rj6dw")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]

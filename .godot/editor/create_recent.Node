@@ -1,11 +1,14 @@
+TitanHealthComponent
+CollisionShape2D
+TitanController
+AnimatedSprite2D
+StaticBody2D
 Sprite2D
 TitanAimManager
 TitanAnimator
 CanvasModulate
 PointLight2D
 LightOccluder2D
-CollisionShape2D
-StaticBody2D
 Line2D
 RailgunBullet
 RayCast2D
@@ -19,4 +22,3 @@ TitanInventoryManager
 TitanVisualManager
 TitanCamera
 TitanInputController
-TitanController
