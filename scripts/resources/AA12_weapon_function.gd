@@ -10,6 +10,8 @@ var fire_rate: float = 100;
 
 var weapon_controller: WeaponController;
 
+var reload_time: float = 1;
+
 @export var bullet: PackedScene;
 @export var muzzle_flash: PackedScene;
 
@@ -34,7 +36,11 @@ func _reload(weapon_controller: WeaponController) -> void:
 	
 	self.weapon_controller = weapon_controller;
 	
+	await weapon_controller.get_tree().create_timer(reload_time).timeout;
+	
 	current_ammo = mag_ammo;
+	
+	weapon_controller._on_reload_end();
 
 func fire() -> void:
 	if(shooting):

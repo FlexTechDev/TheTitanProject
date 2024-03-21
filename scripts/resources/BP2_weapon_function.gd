@@ -2,10 +2,12 @@ extends WeaponFunction
 
 class_name BP2WeaponFunction;
 
-var mag_ammo: int = 24;
+var mag_ammo: int = 12;
 var current_ammo: int = mag_ammo;
 var bullet_speed: float = 1000;
 var pellet_count: int = 5;
+var reload_time_per_shell: float = 0.1;
+var reloading: bool = false;
 
 var weapon_controller: WeaponController;
 
@@ -14,6 +16,8 @@ var weapon_controller: WeaponController;
 
 func _start_shoot(weapon_controller: WeaponController) -> void:
 	super._start_shoot(weapon_controller);
+	
+	reloading = false;
 	
 	self.weapon_controller = weapon_controller;
 	
@@ -48,9 +52,18 @@ func _stop_shoot(weapon_controller: WeaponController) -> void:
 func _reload(weapon_controller: WeaponController) -> void:
 	super._reload(weapon_controller);
 	
+	reloading = true;
+	
 	self.weapon_controller = weapon_controller;
 	
-	current_ammo = mag_ammo;
+	await weapon_controller.get_tree().create_timer(reload_time_per_shell).timeout;
+	
+	current_ammo += 1;
+	
+	if(reloading):
+		_reload(weapon_controller);
+	else:
+		weapon_controller._on_reload_end();
 
 func _manual_process(delta: float) -> void:
 	super._manual_process(delta);

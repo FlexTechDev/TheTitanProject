@@ -4,6 +4,8 @@ class_name WeaponController;
 
 var parent_titan_camera: TitanCamera;
 
+var can_shoot: bool = true;
+
 @export var weapon_function: WeaponFunction;
 @export var chamber_location: Node2D;
 @export var barrel_location: Node2D;
@@ -31,13 +33,24 @@ func drop() -> void:
 	rotation = 0;
 
 func start_shoot() -> void:
-	weapon_function._start_shoot(self);
+	if(can_shoot):
+		weapon_function._start_shoot(self);
 
 func stop_shoot() -> void:
-	weapon_function._stop_shoot(self);
+	if(can_shoot):
+		weapon_function._stop_shoot(self);
 
 func reload() -> void:
 	weapon_function._reload(self);
+	
+	rotation_degrees = -90;
+	
+	can_shoot = false;
+
+func _on_reload_end() -> void:
+	rotation_degrees = 0;
+	
+	can_shoot = true;
 
 func _process(delta: float) -> void:
 	weapon_function._manual_process(delta);

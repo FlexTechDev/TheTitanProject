@@ -9,6 +9,7 @@ var shooting: bool = false;
 var fire_rate: float = 130;
 var burst_gap: float = 0.15;
 var shots_per_burst: int = 4;
+var reload_time: float = 1;
 
 var current_shot: int = 0;
 
@@ -40,7 +41,11 @@ func _reload(weapon_controller: WeaponController) -> void:
 	
 	self.weapon_controller = weapon_controller;
 	
+	await weapon_controller.get_tree().create_timer(reload_time).timeout;
+	
 	current_ammo = mag_ammo;
+	
+	weapon_controller._on_reload_end();
 
 func fire() -> void:
 	if(shooting and current_shot < shots_per_burst):

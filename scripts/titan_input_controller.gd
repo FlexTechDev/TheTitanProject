@@ -19,6 +19,9 @@ func _input(event: InputEvent) -> void:
 		if(event.is_action_pressed("drop")):
 			titan_inventory_manager.try_drop();
 		
+		if(event.is_action_pressed("reload")):
+			titan_inventory_manager.active_weapon.reload();
+		
 	if(event is InputEventMouseButton):
 		if(event.is_action_pressed("shoot") and titan_inventory_manager.active_weapon != null):
 			titan_inventory_manager.active_weapon.start_shoot();
