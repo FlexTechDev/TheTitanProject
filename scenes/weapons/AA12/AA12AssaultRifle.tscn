@@ -1,13 +1,15 @@
-[gd_scene load_steps=7 format=3 uid="uid://dv77u831emsml"]
+[gd_scene load_steps=8 format=3 uid="uid://dv77u831emsml"]
 
 [ext_resource type="Script" path="res://scripts/weapon_controller.gd" id="1_vnqo3"]
 [ext_resource type="Texture2D" uid="uid://badayp38pnug0" path="res://assets/weapons/AA_12/AA_12AssaultRifle.png" id="2_onpxc"]
 [ext_resource type="Script" path="res://scripts/resources/AA12_weapon_function.gd" id="2_shu2p"]
 [ext_resource type="PackedScene" uid="uid://dmqa4phqnks8v" path="res://scenes/weapons/bullets/standard_bullet.tscn" id="2_yowvi"]
+[ext_resource type="PackedScene" uid="uid://cgpr7wbqcy8uy" path="res://assets/vfx/particles/muzzle_flashes/AA12_muzzle_flash.tscn" id="3_o5bl0"]
 
 [sub_resource type="Resource" id="Resource_wy8p7"]
 script = ExtResource("2_shu2p")
 bullet = ExtResource("2_yowvi")
+muzzle_flash = ExtResource("3_o5bl0")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xbb1h"]
 size = Vector2(11, 5)

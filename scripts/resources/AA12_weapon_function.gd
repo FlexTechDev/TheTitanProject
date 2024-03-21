@@ -11,6 +11,7 @@ var fire_rate: float = 100;
 var weapon_controller: WeaponController;
 
 @export var bullet: PackedScene;
+@export var muzzle_flash: PackedScene;
 
 func _start_shoot(weapon_controller: WeaponController) -> void:
 	super._start_shoot(weapon_controller);
@@ -38,6 +39,14 @@ func _reload(weapon_controller: WeaponController) -> void:
 func fire() -> void:
 	if(shooting):
 		weapon_controller.parent_titan_camera.shake(1);
+		
+		var muzzle_flash_instance: GPUParticles2D = muzzle_flash.instantiate();
+		weapon_controller.get_tree().current_scene.add_child(muzzle_flash_instance);
+		
+		muzzle_flash_instance.global_position = weapon_controller.barrel_location.global_position;
+		muzzle_flash_instance.global_rotation = weapon_controller.barrel_location.global_rotation;
+		
+		muzzle_flash_instance.emitting = true;
 		
 		var bullet_instance: Bullet = bullet.instantiate();
 		weapon_controller.get_tree().current_scene.add_child(bullet_instance);
