@@ -1,13 +1,15 @@
-[gd_scene load_steps=7 format=3 uid="uid://h4abswr1cu40"]
+[gd_scene load_steps=8 format=3 uid="uid://h4abswr1cu40"]
 
 [ext_resource type="Script" path="res://scripts/weapon_controller.gd" id="1_wwfm6"]
 [ext_resource type="Script" path="res://scripts/resources/R5_weapon_function.gd" id="2_jo5kr"]
 [ext_resource type="PackedScene" uid="uid://7o534ocnk2ct" path="res://assets/vfx/particles/muzzle_flashes/blue_muzzle_flash.tscn" id="2_xk1xd"]
+[ext_resource type="PackedScene" uid="uid://bgslml4xi8mna" path="res://scenes/weapons/bullets/railgun_shot.tscn" id="3_448hh"]
 [ext_resource type="Texture2D" uid="uid://drbuac3gh5a0v" path="res://assets/weapons/R5/R5Railgun.png" id="4_qmyle"]
 
 [sub_resource type="Resource" id="Resource_ybumr"]
 script = ExtResource("2_jo5kr")
 muzzle_flash = ExtResource("2_xk1xd")
+railgun_bullet = ExtResource("3_448hh")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xbb1h"]
 size = Vector2(22, 6)
@@ -41,5 +43,6 @@ position = Vector2(10, 2)
 position = Vector2(-2, 2)
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
+visible = false
 position = Vector2(14, 0)
 target_position = Vector2(400, 0)
