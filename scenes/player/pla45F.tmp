@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://ccf4pxcrfwi4q"]
+[gd_scene load_steps=21 format=3 uid="uid://ccf4pxcrfwi4q"]
 
 [ext_resource type="Script" path="res://scripts/titan_controller.gd" id="1_x3jne"]
 [ext_resource type="Shader" path="res://shaders/armor_shader.gdshader" id="2_bt7i8"]
@@ -13,7 +13,6 @@
 [ext_resource type="Resource" uid="uid://d3mvfwp0g51qa" path="res://assets/titan/visuals/default_space_marine.tres" id="9_l4fy0"]
 [ext_resource type="Texture2D" uid="uid://dx0to1mrll173" path="res://assets/ui/crosshair/aim.png" id="12_138jm"]
 [ext_resource type="Script" path="res://scripts/titan_aim_manager.gd" id="13_54h4w"]
-[ext_resource type="Texture2D" uid="uid://y5dwerndqpj1" path="res://assets/ui/crosshair/true_aim.png" id="14_cedht"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rr5fh"]
 size = Vector2(8, 17)
@@ -130,16 +129,12 @@ script = ExtResource("5_7hkgx")
 target = NodePath("../TitanController")
 
 [node name="TitanAimManager" type="Sprite2D" parent="." node_paths=PackedStringArray("titan_inventory_manager")]
-z_index = 4
 texture_filter = 1
 texture = ExtResource("12_138jm")
 script = ExtResource("13_54h4w")
 titan_inventory_manager = NodePath("../TitanController/TitanAnimator/HoldingPoint")
 
 [node name="Sprite2D" type="Sprite2D" parent="TitanAimManager"]
-modulate = Color(1, 1, 1, 0.435294)
-z_index = 4
-texture = ExtResource("14_cedht")
 
 [connection signal="area_entered" from="TitanController/TitanAnimator/HoldingPoint" to="TitanController/TitanAnimator/HoldingPoint" method="_on_area_entered"]
 [connection signal="area_exited" from="TitanController/TitanAnimator/HoldingPoint" to="TitanController/TitanAnimator/HoldingPoint" method="_on_area_exited"]
