@@ -8,7 +8,7 @@ var active_weapon: WeaponController;
 @export var titan_camera: TitanCamera;
 
 func try_pick_up() -> void:
-	if(pickupable_weapon != null):
+	if(pickupable_weapon != null and active_weapon == null):
 		pickupable_weapon.pick_up(self);
 		active_weapon = pickupable_weapon;
 

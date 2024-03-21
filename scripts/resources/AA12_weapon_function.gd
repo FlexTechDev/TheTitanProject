@@ -38,7 +38,8 @@ func _reload(weapon_controller: WeaponController) -> void:
 
 func fire() -> void:
 	if(shooting):
-		weapon_controller.parent_titan_camera.shake(1);
+		var direction = Vector2(cos(weapon_controller.global_rotation), sin(weapon_controller.global_rotation));
+		weapon_controller.parent_titan_camera.shake(2, -direction);
 		
 		var muzzle_flash_instance: GPUParticles2D = muzzle_flash.instantiate();
 		weapon_controller.get_tree().current_scene.add_child(muzzle_flash_instance);

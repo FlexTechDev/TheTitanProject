@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://msij3nha7mdy"]
+[gd_scene load_steps=6 format=3 uid="uid://msij3nha7mdy"]
 
 [ext_resource type="PackedScene" uid="uid://ccf4pxcrfwi4q" path="res://scenes/player/player.tscn" id="1_yl2nx"]
-[ext_resource type="PackedScene" uid="uid://dv77u831emsml" path="res://scenes/weapons/AA12/AA12AssaultRifle.tscn" id="2_26055"]
+[ext_resource type="PackedScene" uid="uid://dv77u831emsml" path="res://scenes/weapons/rifles/AA12AssaultRifle.tscn" id="2_26055"]
 [ext_resource type="Environment" uid="uid://juwlww48vluh" path="res://assets/vfx/playground_environment.tres" id="3_85k8e"]
-[ext_resource type="PackedScene" uid="uid://c7bn6l80vmnm4" path="res://scenes/weapons/AA12/BB32BattleRifle.tscn" id="4_s2wxu"]
+[ext_resource type="PackedScene" uid="uid://c7bn6l80vmnm4" path="res://scenes/weapons/rifles/BB32BattleRifle.tscn" id="4_s2wxu"]
+[ext_resource type="PackedScene" uid="uid://dvwck2m2ehivn" path="res://scenes/weapons/shotguns/BP2Shotgun.tscn" id="5_pc1ff"]
 
 [node name="playground" type="Node2D"]
 
@@ -18,3 +19,6 @@ environment = ExtResource("3_85k8e")
 
 [node name="BB32BattleRifle" parent="." instance=ExtResource("4_s2wxu")]
 position = Vector2(339, 111)
+
+[node name="BP2Shotgun" parent="." instance=ExtResource("5_pc1ff")]
+position = Vector2(432, 110)

@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://cgpr7wbqcy8uy"]
 
-[ext_resource type="Script" path="res://scripts/misc/particles_destroy.gd" id="1_qrnvh"]
+[ext_resource type="Script" path="res://scripts/misc/particles_destroy.gd" id="1_83dlp"]
 
 [sub_resource type="Gradient" id="Gradient_dkfgk"]
 offsets = PackedFloat32Array(0, 0.522761, 1)
@@ -47,4 +47,4 @@ process_material = SubResource("ParticleProcessMaterial_5jmkv")
 lifetime = 0.15
 one_shot = true
 explosiveness = 1.0
-script = ExtResource("1_qrnvh")
+script = ExtResource("1_83dlp")

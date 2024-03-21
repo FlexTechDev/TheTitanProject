@@ -1,0 +1,42 @@
+[gd_scene load_steps=8 format=3 uid="uid://dvwck2m2ehivn"]
+
+[ext_resource type="Script" path="res://scripts/weapon_controller.gd" id="1_4uo17"]
+[ext_resource type="PackedScene" uid="uid://damcubi446uk7" path="res://scenes/weapons/bullets/standard_pellet.tscn" id="2_jtdkx"]
+[ext_resource type="Script" path="res://scripts/resources/BP2_weapon_function.gd" id="3_43grk"]
+[ext_resource type="PackedScene" uid="uid://bydjy5e4eee8l" path="res://assets/vfx/particles/muzzle_flashes/red_muzzle_flash.tscn" id="3_uogv3"]
+[ext_resource type="Texture2D" uid="uid://brji2q01qec0t" path="res://assets/weapons/BP2/BP2Shotgun.png" id="5_sqx2q"]
+
+[sub_resource type="Resource" id="Resource_lp3g0"]
+script = ExtResource("3_43grk")
+bullet = ExtResource("2_jtdkx")
+muzzle_flash = ExtResource("3_uogv3")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xbb1h"]
+size = Vector2(16, 6)
+
+[node name="BP2Shotgun" type="Area2D" node_paths=PackedStringArray("chamber_location", "barrel_location", "right_hand_position", "left_hand_position")]
+script = ExtResource("1_4uo17")
+weapon_function = SubResource("Resource_lp3g0")
+chamber_location = NodePath("Chamber")
+barrel_location = NodePath("Barrel")
+right_hand_position = NodePath("RightHandPosition")
+left_hand_position = NodePath("LeftHandPosition")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_xbb1h")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("5_sqx2q")
+
+[node name="Barrel" type="Node2D" parent="."]
+position = Vector2(8, -1)
+
+[node name="Chamber" type="Node2D" parent="."]
+position = Vector2(3, 0)
+
+[node name="RightHandPosition" type="Node2D" parent="."]
+position = Vector2(4, 2)
+
+[node name="LeftHandPosition" type="Node2D" parent="."]
+position = Vector2(-2, 2)
