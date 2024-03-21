@@ -6,8 +6,8 @@ var mag_ammo: int = 24;
 var current_ammo: int = mag_ammo;
 var bullet_speed: float = 1000;
 var shooting: bool = false;
-var fire_rate: float = 130;
-var burst_gap: float = 0.15;
+var fire_rate: float = 100;
+var burst_gap: float = 0.3;
 var shots_per_burst: int = 4;
 var reload_time: float = 1;
 
@@ -15,6 +15,7 @@ var current_shot: int = 0;
 
 var weapon_controller: WeaponController;
 
+@export var sleeve: PackedScene;
 @export var bullet: PackedScene;
 @export var muzzle_flash: PackedScene;
 
@@ -49,6 +50,11 @@ func _reload(weapon_controller: WeaponController) -> void:
 
 func fire() -> void:
 	if(shooting and current_shot < shots_per_burst):
+		var sleeve_instance: GPUParticles2D = sleeve.instantiate();
+		weapon_controller.get_tree().current_scene.add_child(sleeve_instance);
+		sleeve_instance.global_position = weapon_controller.chamber_location.global_position;
+		sleeve_instance.emitting = true;
+		
 		var direction = Vector2(cos(weapon_controller.global_rotation), sin(weapon_controller.global_rotation));
 		weapon_controller.parent_titan_camera.shake(2, -direction);
 		

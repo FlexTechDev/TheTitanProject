@@ -10,6 +10,7 @@ var reload_time: float = 1;
 
 var weapon_controller: WeaponController;
 
+@export var shell: PackedScene;
 @export var bullet: PackedScene;
 @export var muzzle_flash: PackedScene;
 
@@ -17,6 +18,11 @@ func _start_shoot(weapon_controller: WeaponController) -> void:
 	super._start_shoot(weapon_controller);
 	
 	self.weapon_controller = weapon_controller;
+	
+	var shell_instance: GPUParticles2D = shell.instantiate();
+	weapon_controller.get_tree().current_scene.add_child(shell_instance);
+	shell_instance.global_position = weapon_controller.chamber_location.global_position;
+	shell_instance.emitting = true;
 	
 	var direction = Vector2(cos(weapon_controller.global_rotation), sin(weapon_controller.global_rotation));
 	weapon_controller.parent_titan_camera.shake(10, -direction);

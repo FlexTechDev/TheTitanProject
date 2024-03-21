@@ -1,13 +1,15 @@
-[gd_scene load_steps=8 format=3 uid="uid://c7bn6l80vmnm4"]
+[gd_scene load_steps=9 format=3 uid="uid://c7bn6l80vmnm4"]
 
 [ext_resource type="Script" path="res://scripts/weapon_controller.gd" id="1_qtahs"]
 [ext_resource type="Script" path="res://scripts/resources/BB32_weapon_function.gd" id="2_57env"]
 [ext_resource type="PackedScene" uid="uid://dmqa4phqnks8v" path="res://scenes/weapons/bullets/standard_bullet.tscn" id="2_fb2xu"]
 [ext_resource type="PackedScene" uid="uid://cgpr7wbqcy8uy" path="res://assets/vfx/particles/muzzle_flashes/orange_muzzle_flash.tscn" id="3_sui6l"]
 [ext_resource type="Texture2D" uid="uid://r85mx6vvgd0w" path="res://assets/weapons/AA_12/BB_32BattleRifle.png" id="5_8p1fh"]
+[ext_resource type="PackedScene" uid="uid://cgu45txlyc6cx" path="res://assets/vfx/particles/ejects/standard_sleeve.tscn" id="5_bmylr"]
 
 [sub_resource type="Resource" id="Resource_1xndc"]
 script = ExtResource("2_57env")
+sleeve = ExtResource("5_bmylr")
 bullet = ExtResource("2_fb2xu")
 muzzle_flash = ExtResource("3_sui6l")
 

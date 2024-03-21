@@ -12,6 +12,7 @@ var weapon_controller: WeaponController;
 
 var reload_time: float = 1;
 
+@export var sleeve: PackedScene;
 @export var bullet: PackedScene;
 @export var muzzle_flash: PackedScene;
 
@@ -44,6 +45,11 @@ func _reload(weapon_controller: WeaponController) -> void:
 
 func fire() -> void:
 	if(shooting):
+		var sleeve_instance: GPUParticles2D = sleeve.instantiate();
+		weapon_controller.get_tree().current_scene.add_child(sleeve_instance);
+		sleeve_instance.global_position = weapon_controller.chamber_location.global_position;
+		sleeve_instance.emitting = true;
+		
 		var direction = Vector2(cos(weapon_controller.global_rotation), sin(weapon_controller.global_rotation));
 		weapon_controller.parent_titan_camera.shake(2, -direction);
 		

@@ -22,7 +22,7 @@ position = Vector2(286, 113)
 position = Vector2(339, 111)
 
 [node name="BP2Shotgun" parent="." instance=ExtResource("5_pc1ff")]
-position = Vector2(432, 110)
+position = Vector2(262, 167)
 
 [node name="AA12AssaultRifle2" parent="." instance=ExtResource("6_r0mi8")]
 position = Vector2(165, 114)

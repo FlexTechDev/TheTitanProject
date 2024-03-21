@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://cg7s0vb538pku"]
+
+[ext_resource type="Texture2D" uid="uid://bsb3iecx0jbo2" path="res://assets/weapons/shell.png" id="1_atbp0"]
+[ext_resource type="Script" path="res://scripts/misc/particles_destroy.gd" id="2_n0833"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_8c7r7"]
+particle_flag_disable_z = true
+direction = Vector3(0, -1, 0)
+spread = 10.0
+gravity = Vector3(0, 200, 0)
+initial_velocity_min = 100.0
+initial_velocity_max = 100.0
+angular_velocity_min = 300.0
+angular_velocity_max = 300.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_min = 0.5
+scale_max = 0.5
+
+[node name="standard_shell" type="GPUParticles2D"]
+texture_filter = 1
+amount = 1
+process_material = SubResource("ParticleProcessMaterial_8c7r7")
+texture = ExtResource("1_atbp0")
+script = ExtResource("2_n0833")

@@ -1,3 +1,6 @@
+GPUParticles2D
+Trail2D
+Line2D
 TitanHealthComponent
 CollisionShape2D
 TitanController
@@ -9,11 +12,9 @@ TitanAnimator
 CanvasModulate
 PointLight2D
 LightOccluder2D
-Line2D
 RailgunBullet
 RayCast2D
 WorldEnvironment
-GPUParticles2D
 WeaponController
 Node2D
 Node
