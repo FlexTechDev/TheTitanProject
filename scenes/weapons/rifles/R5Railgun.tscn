@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://h4abswr1cu40"]
 
-[ext_resource type="Script" path="res://scripts/weapon_controller.gd" id="1_wwfm6"]
+[ext_resource type="Script" path="res://scripts/weapons/weapon_controller.gd" id="1_p5wjp"]
 [ext_resource type="Script" path="res://scripts/resources/R5_weapon_function.gd" id="2_jo5kr"]
 [ext_resource type="PackedScene" uid="uid://7o534ocnk2ct" path="res://assets/vfx/particles/muzzle_flashes/blue_muzzle_flash.tscn" id="2_xk1xd"]
 [ext_resource type="PackedScene" uid="uid://bgslml4xi8mna" path="res://scenes/weapons/bullets/railgun_shot.tscn" id="3_448hh"]
@@ -15,7 +15,7 @@ railgun_bullet = ExtResource("3_448hh")
 size = Vector2(22, 6)
 
 [node name="R5Railgun" type="Area2D" node_paths=PackedStringArray("chamber_location", "barrel_location", "right_hand_position", "left_hand_position")]
-script = ExtResource("1_wwfm6")
+script = ExtResource("1_p5wjp")
 weapon_function = SubResource("Resource_ybumr")
 chamber_location = NodePath("Chamber")
 barrel_location = NodePath("Barrel")

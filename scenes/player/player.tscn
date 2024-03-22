@@ -1,19 +1,21 @@
-[gd_scene load_steps=22 format=3 uid="uid://ccf4pxcrfwi4q"]
+[gd_scene load_steps=24 format=3 uid="uid://ccf4pxcrfwi4q"]
 
-[ext_resource type="Script" path="res://scripts/titan_controller.gd" id="1_x3jne"]
+[ext_resource type="Script" path="res://scripts/titan/titan_component_manager.gd" id="1_6piqb"]
+[ext_resource type="Script" path="res://scripts/titan/titan_controller.gd" id="1_76v2m"]
 [ext_resource type="Shader" path="res://shaders/armor_shader.gdshader" id="2_bt7i8"]
 [ext_resource type="SpriteFrames" uid="uid://khhtyxngqps4" path="res://assets/titan/titan_frames.tres" id="2_jxgpa"]
-[ext_resource type="Script" path="res://scripts/titan_animator.gd" id="2_q3l38"]
-[ext_resource type="Script" path="res://scripts/titan_input_controller.gd" id="3_xg8r0"]
-[ext_resource type="Script" path="res://scripts/titan_camera_controller.gd" id="5_7hkgx"]
-[ext_resource type="Script" path="res://scripts/titan_visual_manager.gd" id="5_famkg"]
+[ext_resource type="Script" path="res://scripts/titan/titan_animator.gd" id="4_2h4br"]
 [ext_resource type="Texture2D" uid="uid://48gyf4strst3" path="res://assets/titan/shoulders/TitanShoulderDefault.png" id="6_rufmb"]
-[ext_resource type="Script" path="res://scripts/titan_inventory_manager.gd" id="7_bnpmr"]
 [ext_resource type="Texture2D" uid="uid://chcfj1jkv2lx7" path="res://assets/titan/TitanHands.png" id="7_fyjp2"]
+[ext_resource type="Script" path="res://scripts/titan/titan_inventory_manager.gd" id="7_m2ru4"]
+[ext_resource type="Script" path="res://scripts/titan/titan_visual_manager.gd" id="8_6yfam"]
 [ext_resource type="Resource" uid="uid://d3mvfwp0g51qa" path="res://assets/titan/visuals/default_space_marine.tres" id="9_l4fy0"]
+[ext_resource type="Script" path="res://scripts/titan/titan_input_controller.gd" id="10_f6m0g"]
+[ext_resource type="Script" path="res://scripts/titan/titan_camera_controller.gd" id="11_wuaas"]
 [ext_resource type="Texture2D" uid="uid://dx0to1mrll173" path="res://assets/ui/crosshair/aim.png" id="12_138jm"]
-[ext_resource type="Script" path="res://scripts/titan_aim_manager.gd" id="13_54h4w"]
+[ext_resource type="Script" path="res://scripts/titan/titan_aim_manager.gd" id="13_nfud5"]
 [ext_resource type="Texture2D" uid="uid://y5dwerndqpj1" path="res://assets/ui/crosshair/true_aim.png" id="14_cedht"]
+[ext_resource type="PackedScene" uid="uid://cvs3wd8s4d7hu" path="res://scenes/player/hud/hud.tscn" id="15_3ipf3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rr5fh"]
 size = Vector2(8, 17)
@@ -57,11 +59,19 @@ shader_parameter/visor_color = null
 [sub_resource type="CircleShape2D" id="CircleShape2D_xkkfm"]
 radius = 40.0
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="Node2D" node_paths=PackedStringArray("titan_controller", "titan_camera", "titan_aim_manager", "titan_animator", "titan_inventory_manager", "titan_input_controller", "titan_visual_manager")]
+script = ExtResource("1_6piqb")
+titan_controller = NodePath("TitanController")
+titan_camera = NodePath("TitanCamera")
+titan_aim_manager = NodePath("TitanAimManager")
+titan_animator = NodePath("TitanController/TitanAnimator")
+titan_inventory_manager = NodePath("TitanController/TitanAnimator/HoldingPoint")
+titan_input_controller = NodePath("TitanInputController")
+titan_visual_manager = NodePath("TitanController/TitanVisualManager")
 
 [node name="TitanController" type="CharacterBody2D" parent="."]
 position = Vector2(0, -12)
-script = ExtResource("1_x3jne")
+script = ExtResource("1_76v2m")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TitanController"]
 position = Vector2(0, 3.5)
@@ -72,7 +82,7 @@ texture_filter = 1
 material = SubResource("ShaderMaterial_eq8ma")
 sprite_frames = ExtResource("2_jxgpa")
 animation = &"idle"
-script = ExtResource("2_q3l38")
+script = ExtResource("4_2h4br")
 
 [node name="LeftHand" type="Sprite2D" parent="TitanController/TitanAnimator"]
 z_index = 1
@@ -103,14 +113,14 @@ flip_h = true
 
 [node name="HoldingPoint" type="Area2D" parent="TitanController/TitanAnimator" node_paths=PackedStringArray("titan_camera")]
 position = Vector2(2, 2)
-script = ExtResource("7_bnpmr")
+script = ExtResource("7_m2ru4")
 titan_camera = NodePath("../../../TitanCamera")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TitanController/TitanAnimator/HoldingPoint"]
 shape = SubResource("CircleShape2D_xkkfm")
 
 [node name="TitanVisualManager" type="Node" parent="TitanController" node_paths=PackedStringArray("sprite", "left_hand_sprite", "right_hand_sprite", "left_shoulder_sprite", "right_shoulder_sprite")]
-script = ExtResource("5_famkg")
+script = ExtResource("8_6yfam")
 sprite = NodePath("../TitanAnimator")
 left_hand_sprite = NodePath("../TitanAnimator/LeftHand")
 right_hand_sprite = NodePath("../TitanAnimator/RightHand")
@@ -120,26 +130,28 @@ shoulder_texture = ExtResource("6_rufmb")
 current_visual_asset = ExtResource("9_l4fy0")
 
 [node name="TitanInputController" type="Node" parent="." node_paths=PackedStringArray("titan_controller", "titan_inventory_manager")]
-script = ExtResource("3_xg8r0")
+script = ExtResource("10_f6m0g")
 titan_controller = NodePath("../TitanController")
 titan_inventory_manager = NodePath("../TitanController/TitanAnimator/HoldingPoint")
 
 [node name="TitanCamera" type="Camera2D" parent="." node_paths=PackedStringArray("target")]
 zoom = Vector2(3, 3)
-script = ExtResource("5_7hkgx")
+script = ExtResource("11_wuaas")
 target = NodePath("../TitanController")
 
 [node name="TitanAimManager" type="Sprite2D" parent="." node_paths=PackedStringArray("titan_inventory_manager")]
 z_index = 4
 texture_filter = 1
 texture = ExtResource("12_138jm")
-script = ExtResource("13_54h4w")
+script = ExtResource("13_nfud5")
 titan_inventory_manager = NodePath("../TitanController/TitanAnimator/HoldingPoint")
 
 [node name="Sprite2D" type="Sprite2D" parent="TitanAimManager"]
 modulate = Color(1, 1, 1, 0.435294)
 z_index = 4
 texture = ExtResource("14_cedht")
+
+[node name="hud" parent="." instance=ExtResource("15_3ipf3")]
 
 [connection signal="area_entered" from="TitanController/TitanAnimator/HoldingPoint" to="TitanController/TitanAnimator/HoldingPoint" method="_on_area_entered"]
 [connection signal="area_exited" from="TitanController/TitanAnimator/HoldingPoint" to="TitanController/TitanAnimator/HoldingPoint" method="_on_area_exited"]

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/misc/dummy_controller.gd" id="1_0vhr2"]
 [ext_resource type="SpriteFrames" uid="uid://dego1uy7r1730" path="res://assets/titan/dummy_frames.tres" id="1_dx08y"]
-[ext_resource type="Script" path="res://scripts/titan_health_component.gd" id="2_i0m2j"]
+[ext_resource type="Script" path="res://scripts/titan/titan_health_component.gd" id="3_rivy2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_enxnx"]
 size = Vector2(10, 17)
@@ -20,6 +20,6 @@ position = Vector2(0, 3.5)
 shape = SubResource("RectangleShape2D_enxnx")
 
 [node name="TitanHealthComponent" type="Node" parent="."]
-script = ExtResource("2_i0m2j")
+script = ExtResource("3_rivy2")
 
 [connection signal="damage_taken" from="TitanHealthComponent" to="." method="_on_damage_taken"]

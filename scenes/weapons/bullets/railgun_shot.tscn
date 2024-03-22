@@ -1,9 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://bgslml4xi8mna"]
 
-[ext_resource type="Script" path="res://scripts/railgun_bullet.gd" id="1_05wgg"]
+[ext_resource type="Script" path="res://scripts/weapons/railgun_bullet.gd" id="1_kecrs"]
 
 [node name="railgun_shot" type="Node2D"]
-script = ExtResource("1_05wgg")
+script = ExtResource("1_kecrs")
 
 [node name="Line2D" type="Line2D" parent="."]
 default_color = Color(0.403922, 0.788235, 1, 1)

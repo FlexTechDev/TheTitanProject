@@ -1,3 +1,15 @@
+TitanComponentManager
+UIInventoryManager
+TextureRect
+Label
+HSeparator
+VBoxContainer
+Control
+CanvasLayer
+HBoxContainer
+VSeparator
+AspectRatioContainer
+Container
 GPUParticles2D
 Trail2D
 Line2D
@@ -18,8 +30,3 @@ WorldEnvironment
 WeaponController
 Node2D
 Node
-Bullet
-TitanInventoryManager
-TitanVisualManager
-TitanCamera
-TitanInputController

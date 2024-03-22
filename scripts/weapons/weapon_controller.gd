@@ -6,6 +6,8 @@ var parent_titan_camera: TitanCamera;
 
 var can_shoot: bool = true;
 
+@onready var sprite: Sprite2D = $Sprite2D;
+
 @export var aim_time: float = 8;
 @export var weapon_function: WeaponFunction;
 @export var chamber_location: Node2D;
@@ -42,6 +44,10 @@ func stop_shoot() -> void:
 		weapon_function._stop_shoot(self);
 
 func reload() -> void:
+	if(weapon_function.get("num_mags") != null):
+		if(weapon_function.num_mags <= 0):
+			return;
+	
 	weapon_function._reload(self);
 	
 	rotation_degrees = -90;
@@ -52,6 +58,3 @@ func _on_reload_end() -> void:
 	rotation_degrees = 0;
 	
 	can_shoot = true;
-
-func _process(delta: float) -> void:
-	weapon_function._manual_process(delta);

@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://dv77u831emsml"]
 
-[ext_resource type="Script" path="res://scripts/weapon_controller.gd" id="1_vnqo3"]
+[ext_resource type="Script" path="res://scripts/weapons/weapon_controller.gd" id="1_ew7x1"]
 [ext_resource type="Texture2D" uid="uid://badayp38pnug0" path="res://assets/weapons/AA_12/AA_12AssaultRifle.png" id="2_onpxc"]
 [ext_resource type="PackedScene" uid="uid://dmqa4phqnks8v" path="res://scenes/weapons/bullets/standard_bullet.tscn" id="2_yowvi"]
 [ext_resource type="PackedScene" uid="uid://cgpr7wbqcy8uy" path="res://assets/vfx/particles/muzzle_flashes/orange_muzzle_flash.tscn" id="3_y5jrn"]
@@ -17,7 +17,7 @@ muzzle_flash = ExtResource("3_y5jrn")
 size = Vector2(16, 6)
 
 [node name="AA12AssaultRifle" type="Area2D" node_paths=PackedStringArray("chamber_location", "barrel_location", "right_hand_position", "left_hand_position")]
-script = ExtResource("1_vnqo3")
+script = ExtResource("1_ew7x1")
 weapon_function = SubResource("Resource_7tgib")
 chamber_location = NodePath("Chamber")
 barrel_location = NodePath("Barrel")

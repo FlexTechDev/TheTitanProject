@@ -2,6 +2,7 @@ extends WeaponFunction
 
 class_name AA12WeaponFunction;
 
+var num_mags: int = 3;
 var mag_ammo: int = 24;
 var current_ammo: int = mag_ammo;
 var bullet_speed: float = 1000;
@@ -23,7 +24,8 @@ func _start_shoot(weapon_controller: WeaponController) -> void:
 	
 	shooting = true;
 	
-	fire();
+	if(current_ammo > 0):
+		fire();
 
 func _stop_shoot(weapon_controller: WeaponController) -> void:
 	super._stop_shoot(weapon_controller);
@@ -40,6 +42,8 @@ func _reload(weapon_controller: WeaponController) -> void:
 	await weapon_controller.get_tree().create_timer(reload_time).timeout;
 	
 	current_ammo = mag_ammo;
+	
+	num_mags -= 1;
 	
 	weapon_controller._on_reload_end();
 
@@ -73,7 +77,5 @@ func fire() -> void:
 		
 		await weapon_controller.get_tree().create_timer(5/fire_rate).timeout;
 		
-		fire();
-
-func _manual_process(delta: float) -> void:
-	super._manual_process(delta);
+		if(current_ammo > 0):
+			fire();

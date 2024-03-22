@@ -2,6 +2,10 @@ extends Node
 
 class_name TitanInputController;
 
+signal fire_input;
+signal fire_input_ended;
+signal reload_input;
+
 @export var titan_controller: TitanController
 @export var titan_inventory_manager: TitanInventoryManager;
 
@@ -21,9 +25,12 @@ func _input(event: InputEvent) -> void:
 		
 		if(event.is_action_pressed("reload")):
 			titan_inventory_manager.active_weapon.reload();
+			reload_input.emit();
 		
 	if(event is InputEventMouseButton):
 		if(event.is_action_pressed("shoot") and titan_inventory_manager.active_weapon != null):
+			fire_input.emit();
 			titan_inventory_manager.active_weapon.start_shoot();
 		if(event.is_action_released("shoot") and titan_inventory_manager.active_weapon != null):
+			fire_input_ended.emit();
 			titan_inventory_manager.active_weapon.stop_shoot();

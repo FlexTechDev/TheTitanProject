@@ -1,0 +1,79 @@
+[gd_scene load_steps=4 format=3 uid="uid://cvs3wd8s4d7hu"]
+
+[ext_resource type="Theme" uid="uid://c673y0fej1vps" path="res://scenes/ui/default_theme.tres" id="1_gc0l2"]
+[ext_resource type="Texture2D" uid="uid://dbpkoblf1i3po" path="res://assets/ui/hud/weapon_panel.png" id="1_ris5u"]
+[ext_resource type="Script" path="res://scripts/ui/ui_inventory_manager.gd" id="3_xych6"]
+
+[node name="hud" type="CanvasLayer"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_gc0l2")
+
+[node name="Container" type="HBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 41.0
+grow_vertical = 0
+scale = Vector2(6.06139, 6.06139)
+pivot_offset = Vector2(0.164979, 40.0898)
+
+[node name="VSeparator" type="VSeparator" parent="Control/Container"]
+modulate = Color(0, 0, 0, 0)
+custom_minimum_size = Vector2(5, 0)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control/Container"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+texture = ExtResource("1_ris5u")
+script = ExtResource("3_xych6")
+
+[node name="MagNumber" type="Label" parent="Control/Container/TextureRect"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 49.8701
+offset_top = -20.3824
+offset_right = 90.8701
+offset_bottom = 4.61763
+grow_vertical = 0
+scale = Vector2(0.32519, 0.32519)
+text = "5
+"
+
+[node name="GrenadeNumber" type="Label" parent="Control/Container/TextureRect"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 35.517
+offset_top = -20.3824
+offset_right = 76.517
+offset_bottom = 4.61763
+grow_vertical = 0
+scale = Vector2(0.32519, 0.32519)
+text = "0
+"
+
+[node name="WeaponTexture" type="TextureRect" parent="Control/Container/TextureRect"]
+modulate = Color(100, 100, 100, 1)
+layout_mode = 0
+offset_left = -0.118374
+offset_top = 1.05901
+offset_right = 39.8816
+offset_bottom = 41.059
+scale = Vector2(0.721036, 0.721036)

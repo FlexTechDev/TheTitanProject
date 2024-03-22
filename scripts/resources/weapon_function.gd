@@ -10,6 +10,3 @@ func _stop_shoot(weapon_controller: WeaponController) -> void:
 
 func _reload(weapon_controller: WeaponController) -> void:
 	pass
-
-func _manual_process(delta: float) -> void:
-	pass

@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://dvwck2m2ehivn"]
 
-[ext_resource type="Script" path="res://scripts/weapon_controller.gd" id="1_4uo17"]
+[ext_resource type="Script" path="res://scripts/weapons/weapon_controller.gd" id="1_u4slb"]
 [ext_resource type="PackedScene" uid="uid://damcubi446uk7" path="res://scenes/weapons/bullets/standard_pellet.tscn" id="2_jtdkx"]
 [ext_resource type="Script" path="res://scripts/resources/BP2_weapon_function.gd" id="3_43grk"]
 [ext_resource type="PackedScene" uid="uid://bydjy5e4eee8l" path="res://assets/vfx/particles/muzzle_flashes/red_muzzle_flash.tscn" id="3_uogv3"]
@@ -17,7 +17,7 @@ muzzle_flash = ExtResource("3_uogv3")
 size = Vector2(16, 6)
 
 [node name="BP2Shotgun" type="Area2D" node_paths=PackedStringArray("chamber_location", "barrel_location", "right_hand_position", "left_hand_position")]
-script = ExtResource("1_4uo17")
+script = ExtResource("1_u4slb")
 weapon_function = SubResource("Resource_lp3g0")
 chamber_location = NodePath("Chamber")
 barrel_location = NodePath("Barrel")

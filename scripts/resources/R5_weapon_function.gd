@@ -2,6 +2,7 @@ extends WeaponFunction
 
 class_name R5WeaponFunction;
 
+var num_mags: int = 3;
 var mag_ammo: int = 12;
 var current_ammo: int = mag_ammo;
 var charging: bool = false;
@@ -22,7 +23,8 @@ func _start_shoot(weapon_controller: WeaponController) -> void:
 	
 	await weapon_controller.get_tree().create_timer(charge_time).timeout;
 	
-	fire(weapon_controller);
+	if(current_ammo > 0):
+		fire(weapon_controller);
 
 func _stop_shoot(weapon_controller: WeaponController) -> void:
 	super._stop_shoot(weapon_controller);
@@ -40,10 +42,9 @@ func _reload(weapon_controller: WeaponController) -> void:
 	
 	current_ammo = mag_ammo;
 	
+	num_mags -= 1;
+	
 	weapon_controller._on_reload_end();
-
-func _manual_process(delta: float) -> void:
-	super._manual_process(delta);
 
 func fire(weapon_controller: WeaponController) -> void:
 	if(!charging):
