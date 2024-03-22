@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://ccf4pxcrfwi4q"]
+[gd_scene load_steps=28 format=3 uid="uid://ccf4pxcrfwi4q"]
 
 [ext_resource type="Script" path="res://scripts/titan/titan_component_manager.gd" id="1_6piqb"]
 [ext_resource type="Script" path="res://scripts/titan/titan_controller.gd" id="1_76v2m"]
@@ -9,7 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://chcfj1jkv2lx7" path="res://assets/titan/TitanHands.png" id="7_fyjp2"]
 [ext_resource type="Script" path="res://scripts/titan/titan_inventory_manager.gd" id="7_m2ru4"]
 [ext_resource type="Script" path="res://scripts/titan/titan_visual_manager.gd" id="8_6yfam"]
+[ext_resource type="Theme" uid="uid://c673y0fej1vps" path="res://scenes/ui/default_theme.tres" id="9_g61yx"]
 [ext_resource type="Resource" uid="uid://d3mvfwp0g51qa" path="res://assets/titan/visuals/default_space_marine.tres" id="9_l4fy0"]
+[ext_resource type="FontFile" uid="uid://dcbdwjgm4omtp" path="res://scenes/player/hud/retro_computer_personal_use.ttf" id="10_6gb0i"]
 [ext_resource type="Script" path="res://scripts/titan/titan_input_controller.gd" id="10_f6m0g"]
 [ext_resource type="Texture2D" uid="uid://cwdx68kc6tjjn" path="res://assets/ui/light.png" id="11_rc54c"]
 [ext_resource type="Script" path="res://scripts/titan/titan_camera_controller.gd" id="11_wuaas"]
@@ -60,6 +62,13 @@ shader_parameter/visor_color = null
 [sub_resource type="CircleShape2D" id="CircleShape2D_xkkfm"]
 radius = 40.0
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vsnrs"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+
 [node name="Titan" type="Node2D" node_paths=PackedStringArray("titan_controller", "titan_camera", "titan_aim_manager", "titan_animator", "titan_inventory_manager", "titan_input_controller", "titan_visual_manager")]
 script = ExtResource("1_6piqb")
 titan_controller = NodePath("TitanController")
@@ -72,7 +81,6 @@ titan_visual_manager = NodePath("TitanController/TitanVisualManager")
 
 [node name="TitanController" type="CharacterBody2D" parent="."]
 position = Vector2(0, -12)
-collision_layer = 2
 script = ExtResource("1_76v2m")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TitanController"]
@@ -121,6 +129,22 @@ titan_camera = NodePath("../../../TitanCamera")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TitanController/TitanAnimator/HoldingPoint"]
 shape = SubResource("CircleShape2D_xkkfm")
 
+[node name="Label" type="Button" parent="TitanController/TitanAnimator/HoldingPoint"]
+visible = false
+texture_filter = 1
+offset_left = 16.0
+offset_top = 26.0
+offset_right = 134.0
+offset_bottom = 56.0
+scale = Vector2(0.20981, 0.20981)
+theme = ExtResource("9_g61yx")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("10_6gb0i")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_vsnrs")
+disabled = true
+text = "E: pick up"
+
 [node name="TitanVisualManager" type="Node" parent="TitanController" node_paths=PackedStringArray("sprite", "left_hand_sprite", "right_hand_sprite", "left_shoulder_sprite", "right_shoulder_sprite")]
 script = ExtResource("8_6yfam")
 sprite = NodePath("../TitanAnimator")
@@ -153,7 +177,7 @@ script = ExtResource("13_nfud5")
 titan_inventory_manager = NodePath("../TitanController/TitanAnimator/HoldingPoint")
 
 [node name="Sprite2D" type="Sprite2D" parent="TitanAimManager"]
-modulate = Color(1, 1, 1, 0.435294)
+modulate = Color(1, 1, 1, 0.647059)
 z_index = 4
 texture = ExtResource("14_cedht")
 

@@ -1,19 +1,56 @@
-[gd_scene load_steps=4 format=3 uid="uid://dwg3qta0oyn5e"]
+[gd_scene load_steps=8 format=3 uid="uid://dwg3qta0oyn5e"]
 
 [ext_resource type="Script" path="res://scripts/ship/drop_pod_enter.gd" id="1_7mxbi"]
-[ext_resource type="Texture2D" uid="uid://cuxo6a4gdjmtx" path="res://assets/levels/drop_pods_enter.png" id="2_sy5r0"]
+[ext_resource type="SpriteFrames" uid="uid://dwl6xu11wfx6i" path="res://assets/levels/drop_pod_enter_frames.tres" id="2_3wcpe"]
+[ext_resource type="Theme" uid="uid://c673y0fej1vps" path="res://scenes/ui/default_theme.tres" id="3_sir8j"]
+[ext_resource type="FontFile" uid="uid://dcbdwjgm4omtp" path="res://scenes/player/hud/retro_computer_personal_use.ttf" id="4_8jwo2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f7tgb"]
 size = Vector2(32, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rddj3"]
+size = Vector2(46, 59)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2gi7p"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
 
 [node name="drop_pod_front_facing" type="StaticBody2D"]
 z_index = -4
 script = ExtResource("1_7mxbi")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-texture = ExtResource("2_sy5r0")
+sprite_frames = ExtResource("2_3wcpe")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_f7tgb")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 13.5)
+shape = SubResource("RectangleShape2D_rddj3")
+
+[node name="Label" type="Button" parent="."]
+visible = false
+texture_filter = 1
+offset_left = 17.0
+offset_top = 17.0
+offset_right = 116.0
+offset_bottom = 47.0
+scale = Vector2(0.20981, 0.20981)
+theme = ExtResource("3_sir8j")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_8jwo2")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_2gi7p")
+disabled = true
+text = "E: enter"
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_body_exited"]

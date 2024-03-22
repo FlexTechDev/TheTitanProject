@@ -1,5 +1,5 @@
-Theme
 SpriteFrames
+Theme
 Environment
 Shader
 TitanVisual

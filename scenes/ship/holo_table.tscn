@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://dfedu4vxopodj"]
+
+[ext_resource type="Texture2D" uid="uid://dcflt5g5p6i8x" path="res://assets/levels/holo_table.png" id="1_mv7dt"]
+[ext_resource type="Texture2D" uid="uid://cwdx68kc6tjjn" path="res://assets/ui/light.png" id="2_0kvyf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_siguy"]
+size = Vector2(32, 7)
+
+[node name="holo_table" type="StaticBody2D"]
+z_index = -2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_mv7dt")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+color = Color(0.439216, 0.639216, 1, 1)
+energy = 0.6
+texture = ExtResource("2_0kvyf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -3.5)
+shape = SubResource("RectangleShape2D_siguy")
