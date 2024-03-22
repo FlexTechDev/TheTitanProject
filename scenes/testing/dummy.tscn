@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dr20pasi3tp7u"]
+[gd_scene load_steps=6 format=3 uid="uid://dr20pasi3tp7u"]
 
 [ext_resource type="Script" path="res://scripts/misc/dummy_controller.gd" id="1_0vhr2"]
 [ext_resource type="SpriteFrames" uid="uid://dego1uy7r1730" path="res://assets/titan/dummy_frames.tres" id="1_dx08y"]
@@ -6,6 +6,9 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_enxnx"]
 size = Vector2(10, 17)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_0u8a5"]
+polygon = PackedVector2Array(-5, -5, 5, -5, 5, 12, -5, 12)
 
 [node name="dummy" type="StaticBody2D"]
 script = ExtResource("1_0vhr2")
@@ -21,5 +24,8 @@ shape = SubResource("RectangleShape2D_enxnx")
 
 [node name="TitanHealthComponent" type="Node" parent="."]
 script = ExtResource("3_rivy2")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_0u8a5")
 
 [connection signal="damage_taken" from="TitanHealthComponent" to="." method="_on_damage_taken"]

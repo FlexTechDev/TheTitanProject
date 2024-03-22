@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://ccf4pxcrfwi4q"]
+[gd_scene load_steps=25 format=3 uid="uid://ccf4pxcrfwi4q"]
 
 [ext_resource type="Script" path="res://scripts/titan/titan_component_manager.gd" id="1_6piqb"]
 [ext_resource type="Script" path="res://scripts/titan/titan_controller.gd" id="1_76v2m"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" path="res://scripts/titan/titan_visual_manager.gd" id="8_6yfam"]
 [ext_resource type="Resource" uid="uid://d3mvfwp0g51qa" path="res://assets/titan/visuals/default_space_marine.tres" id="9_l4fy0"]
 [ext_resource type="Script" path="res://scripts/titan/titan_input_controller.gd" id="10_f6m0g"]
+[ext_resource type="Texture2D" uid="uid://cwdx68kc6tjjn" path="res://assets/ui/light.png" id="11_rc54c"]
 [ext_resource type="Script" path="res://scripts/titan/titan_camera_controller.gd" id="11_wuaas"]
 [ext_resource type="Texture2D" uid="uid://dx0to1mrll173" path="res://assets/ui/crosshair/aim.png" id="12_138jm"]
 [ext_resource type="Script" path="res://scripts/titan/titan_aim_manager.gd" id="13_nfud5"]
@@ -71,6 +72,7 @@ titan_visual_manager = NodePath("TitanController/TitanVisualManager")
 
 [node name="TitanController" type="CharacterBody2D" parent="."]
 position = Vector2(0, -12)
+collision_layer = 2
 script = ExtResource("1_76v2m")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TitanController"]
@@ -128,6 +130,10 @@ left_shoulder_sprite = NodePath("../TitanAnimator/LeftShoulder")
 right_shoulder_sprite = NodePath("../TitanAnimator/RightShoulder")
 shoulder_texture = ExtResource("6_rufmb")
 current_visual_asset = ExtResource("9_l4fy0")
+
+[node name="PointLight2D" type="PointLight2D" parent="TitanController"]
+energy = 0.3
+texture = ExtResource("11_rc54c")
 
 [node name="TitanInputController" type="Node" parent="." node_paths=PackedStringArray("titan_controller", "titan_inventory_manager")]
 script = ExtResource("10_f6m0g")

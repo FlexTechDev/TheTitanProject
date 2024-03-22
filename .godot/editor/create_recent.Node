@@ -1,3 +1,10 @@
+PointLight2D
+DirectionalLight2D
+LightOccluder2D
+OccluderInstance3D
+Node
+CanvasModulate
+Sprite2D
 TitanComponentManager
 UIInventoryManager
 TextureRect
@@ -18,15 +25,8 @@ CollisionShape2D
 TitanController
 AnimatedSprite2D
 StaticBody2D
-Sprite2D
 TitanAimManager
 TitanAnimator
-CanvasModulate
-PointLight2D
-LightOccluder2D
 RailgunBullet
 RayCast2D
 WorldEnvironment
-WeaponController
-Node2D
-Node

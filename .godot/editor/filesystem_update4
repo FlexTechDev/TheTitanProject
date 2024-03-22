@@ -13,15 +13,7 @@ res://scenes/weapons/rifles/BB32BattleRifle.tscn
 res://scenes/weapons/rifles/AA12AssaultRifle.tscn
 res://scenes/weapons/shotguns/BP2Shotgun.tscn
 res://scenes/player/hud/hud.tscn
-res://scenes/ui/default_theme.tres
-res://scripts/ui/ui_inventory_manager.gd
-res://scripts/titan/titan_component_manager.gd
-res://scripts/titan/titan_inventory_manager.gd
-res://scripts/weapons/weapon_controller.gd
-res://scripts/titan/titan_input_controller.gd
-res://scripts/resources/AA12_weapon_function.gd
-res://scripts/resources/BB32_weapon_function.gd
+res://scenes/weapons/rifles/R5Railgun.tscn
 res://scripts/resources/BP2_weapon_function.gd
 res://scripts/resources/R5_weapon_function.gd
-res://scenes/weapons/rifles/R5Railgun.tscn
-res://scripts/resources/weapon_function.gd
+res://scripts/weapons/railgun_bullet.gd

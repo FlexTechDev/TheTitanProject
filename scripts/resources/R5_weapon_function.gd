@@ -2,8 +2,8 @@ extends WeaponFunction
 
 class_name R5WeaponFunction;
 
-var num_mags: int = 3;
-var mag_ammo: int = 12;
+var num_mags: int = 5;
+var mag_ammo: int = 1;
 var current_ammo: int = mag_ammo;
 var charging: bool = false;
 var charge_time: float = 1.5;
@@ -63,6 +63,8 @@ func fire(weapon_controller: WeaponController) -> void:
 	
 	var railgun_bullet_instance: RailgunBullet = railgun_bullet.instantiate();
 	weapon_controller.get_tree().current_scene.add_child(railgun_bullet_instance);
+	
+	current_ammo -= 1;
 	
 	var raycast: RayCast2D = weapon_controller.get_node("RayCast2D");
 	if(raycast.get_collision_point() != null):

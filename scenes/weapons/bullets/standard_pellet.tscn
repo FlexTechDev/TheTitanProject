@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://damcubi446uk7"]
+[gd_scene load_steps=8 format=3 uid="uid://damcubi446uk7"]
 
 [ext_resource type="Script" path="res://scripts/weapons/bullet.gd" id="1_6t7xg"]
 [ext_resource type="Texture2D" uid="uid://c5kgyn6dl0v5s" path="res://assets/weapons/shotgun_pellet.png" id="3_0rn8l"]
 [ext_resource type="Script" path="res://addons/trail_2d/trail_2d.gd" id="3_g04xk"]
+[ext_resource type="Texture2D" uid="uid://cwdx68kc6tjjn" path="res://assets/ui/light.png" id="4_tl5mj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s6fpx"]
 size = Vector2(5, 3)
@@ -34,5 +35,10 @@ default_color = Color(1, 1, 1, 0.603922)
 gradient = SubResource("Gradient_rualj")
 script = ExtResource("3_g04xk")
 length = 7
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+color = Color(1, 0.52549, 0.52549, 1)
+energy = 0.3
+texture = ExtResource("4_tl5mj")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

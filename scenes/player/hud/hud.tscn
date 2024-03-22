@@ -23,13 +23,8 @@ anchor_bottom = 1.0
 offset_top = -40.0
 offset_right = 41.0
 grow_vertical = 0
-scale = Vector2(6.06139, 6.06139)
+scale = Vector2(5, 5)
 pivot_offset = Vector2(0.164979, 40.0898)
-
-[node name="VSeparator" type="VSeparator" parent="Control/Container"]
-modulate = Color(0, 0, 0, 0)
-custom_minimum_size = Vector2(5, 0)
-layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="Control/Container"]
 texture_filter = 1

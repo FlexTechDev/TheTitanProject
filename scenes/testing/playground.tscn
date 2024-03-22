@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://msij3nha7mdy"]
+[gd_scene load_steps=10 format=3 uid="uid://msij3nha7mdy"]
 
 [ext_resource type="PackedScene" uid="uid://ccf4pxcrfwi4q" path="res://scenes/player/player.tscn" id="1_yl2nx"]
 [ext_resource type="PackedScene" uid="uid://dv77u831emsml" path="res://scenes/weapons/rifles/AA12AssaultRifle.tscn" id="2_26055"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://h4abswr1cu40" path="res://scenes/weapons/rifles/R5Railgun.tscn" id="6_r0mi8"]
 [ext_resource type="Texture2D" uid="uid://cn14q5dlgsti6" path="res://icon.svg" id="7_cx2b3"]
 [ext_resource type="PackedScene" uid="uid://dr20pasi3tp7u" path="res://scenes/testing/dummy.tscn" id="7_gbtcd"]
+[ext_resource type="Texture2D" uid="uid://cu47k0cd4ctdg" path="res://assets/levels/testing_ground_tile.png" id="8_1pptw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_goer4"]
 
@@ -24,7 +25,7 @@ position = Vector2(339, 111)
 [node name="BP2Shotgun" parent="." instance=ExtResource("5_pc1ff")]
 position = Vector2(262, 167)
 
-[node name="AA12AssaultRifle2" parent="." instance=ExtResource("6_r0mi8")]
+[node name="R5Railgun" parent="." instance=ExtResource("6_r0mi8")]
 position = Vector2(165, 114)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
@@ -39,3 +40,20 @@ shape = SubResource("RectangleShape2D_goer4")
 
 [node name="dummy" parent="." instance=ExtResource("7_gbtcd")]
 position = Vector2(348, 173)
+
+[node name="Environment" type="Node" parent="."]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="Environment"]
+color = Color(0.152941, 0.152941, 0.152941, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Environment"]
+z_index = -5
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(109, 22)
+texture = ExtResource("8_1pptw")
+region_enabled = true
+region_rect = Rect2(0, 0, 10000, 10000)
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="Environment"]
+energy = 0.75

@@ -20,6 +20,9 @@ func _start_shoot(weapon_controller: WeaponController) -> void:
 	
 	self.weapon_controller = weapon_controller;
 	
+	if(current_ammo <= 0):
+		return;
+	
 	var shell_instance: GPUParticles2D = shell.instantiate();
 	weapon_controller.get_tree().current_scene.add_child(shell_instance);
 	shell_instance.global_position = weapon_controller.chamber_location.global_position;
