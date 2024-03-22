@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bgg0qqudvvts4"]
+
+[ext_resource type="Script" path="res://scripts/ship/drop_pod_enter.gd" id="1_t1pp7"]
+[ext_resource type="Texture2D" uid="uid://bo1svbton07mv" path="res://assets/levels/drop_pods_enter_back.png" id="2_5idpn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f7tgb"]
+size = Vector2(32, 16.5)
+
+[node name="drop_pod_rear_facing" type="StaticBody2D"]
+z_index = 4
+script = ExtResource("1_t1pp7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_5idpn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 24)
+shape = SubResource("RectangleShape2D_f7tgb")

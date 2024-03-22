@@ -1,0 +1,118 @@
+[gd_scene load_steps=11 format=3 uid="uid://dyd4m0hr0h1as"]
+
+[ext_resource type="Texture2D" uid="uid://fu7y2m7sk31g" path="res://assets/levels/menu_ship.png" id="1_mxhdc"]
+[ext_resource type="PackedScene" uid="uid://dwg3qta0oyn5e" path="res://scenes/ship/drop_pod_front_facing.tscn" id="2_r85k5"]
+[ext_resource type="PackedScene" uid="uid://bgg0qqudvvts4" path="res://scenes/ship/drop_pod_rear_facing.tscn" id="3_ajtqf"]
+[ext_resource type="PackedScene" uid="uid://ccf4pxcrfwi4q" path="res://scenes/player/player.tscn" id="4_tqojt"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_y3fjr"]
+b = Vector2(0, 112)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_wxtt3"]
+b = Vector2(0, 61)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_441uf"]
+b = Vector2(0, 37)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_07oye"]
+b = Vector2(0, 32.5269)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_sdhqw"]
+a = Vector2(1.52588e-05, 0)
+b = Vector2(1.52588e-05, 87)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_fesqb"]
+b = Vector2(-7.62939e-06, 178)
+
+[node name="lobby_ship" type="Node2D"]
+
+[node name="MenuShip" type="Sprite2D" parent="."]
+z_index = -5
+texture_filter = 1
+position = Vector2(103, -8)
+texture = ExtResource("1_mxhdc")
+
+[node name="Environment" type="Node" parent="."]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="Environment"]
+color = Color(0.152941, 0.152941, 0.152941, 1)
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="Environment"]
+energy = 0.75
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="drop_pod_front_facing" parent="Node2D" instance=ExtResource("2_r85k5")]
+position = Vector2(-35, -72)
+
+[node name="drop_pod_front_facing2" parent="Node2D" instance=ExtResource("2_r85k5")]
+position = Vector2(35, -72)
+
+[node name="drop_pod_rear_facing" parent="Node2D" instance=ExtResource("3_ajtqf")]
+position = Vector2(-35, 40)
+
+[node name="drop_pod_rear_facing2" parent="Node2D" instance=ExtResource("3_ajtqf")]
+position = Vector2(35, 40)
+
+[node name="Titan" parent="." instance=ExtResource("4_tqojt")]
+position = Vector2(-3, 1)
+
+[node name="ShipCollision" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShipCollision"]
+position = Vector2(-102, -65)
+shape = SubResource("SegmentShape2D_y3fjr")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="ShipCollision"]
+position = Vector2(227, -39)
+shape = SubResource("SegmentShape2D_wxtt3")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="ShipCollision"]
+position = Vector2(227, 23)
+rotation = 0.785398
+shape = SubResource("SegmentShape2D_441uf")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="ShipCollision"]
+position = Vector2(202, -57)
+rotation = -0.785398
+shape = SubResource("SegmentShape2D_441uf")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="ShipCollision"]
+position = Vector2(96, -80)
+rotation = -0.785398
+shape = SubResource("SegmentShape2D_07oye")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="ShipCollision"]
+position = Vector2(-101, 48)
+rotation = -0.785398
+shape = SubResource("SegmentShape2D_07oye")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="ShipCollision"]
+position = Vector2(95, 71)
+rotation = -2.35619
+shape = SubResource("SegmentShape2D_07oye")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="ShipCollision"]
+position = Vector2(-102, -57)
+rotation = -2.35619
+shape = SubResource("SegmentShape2D_07oye")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="ShipCollision"]
+position = Vector2(119, -57)
+rotation = -1.5708
+shape = SubResource("SegmentShape2D_sdhqw")
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="ShipCollision"]
+position = Vector2(-82, -80)
+rotation = -1.5708
+shape = SubResource("SegmentShape2D_fesqb")
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="ShipCollision"]
+position = Vector2(-83, 71)
+rotation = -1.5708
+shape = SubResource("SegmentShape2D_fesqb")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="ShipCollision"]
+position = Vector2(118, 48)
+rotation = -1.5708
+shape = SubResource("SegmentShape2D_sdhqw")

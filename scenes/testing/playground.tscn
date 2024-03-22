@@ -13,7 +13,7 @@
 
 [node name="playground" type="Node2D"]
 
-[node name="Node2D" parent="." instance=ExtResource("1_yl2nx")]
+[node name="Titan" parent="." instance=ExtResource("1_yl2nx")]
 position = Vector2(265, 118)
 
 [node name="AA12AssaultRifle" parent="." instance=ExtResource("2_26055")]
