@@ -67,9 +67,11 @@ func fire(weapon_controller: WeaponController) -> void:
 	current_ammo -= 1;
 	
 	var raycast: RayCast2D = weapon_controller.get_node("RayCast2D");
-	if(raycast.get_collision_point() != null):
+	
+	if(raycast.is_colliding()):
 		railgun_bullet_instance.place(weapon_controller.barrel_location.global_position, raycast.get_collision_point(), 2.5);
-		
 		if(raycast.get_collider() is DummyController):
 			var health_component: TitanHealthComponent = raycast.get_collider().get_node("TitanHealthComponent");
 			health_component.take_damage(40);
+	else:
+		railgun_bullet_instance.place(weapon_controller.barrel_location.global_position, weapon_controller.barrel_location.global_position + (direction * raycast.target_position.length()), 2.5);
