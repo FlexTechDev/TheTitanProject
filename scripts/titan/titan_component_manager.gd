@@ -12,5 +12,3 @@ class_name TitanComponentManager
 
 func _ready() -> void:
 	set_multiplayer_authority(name.to_int());
-	
-	print(is_multiplayer_authority());

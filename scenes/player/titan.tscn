@@ -106,6 +106,14 @@ properties/8/path = NodePath("TitanController:last_movement_input")
 properties/8/spawn = true
 properties/8/sync = true
 properties/8/watch = false
+properties/9/path = NodePath("TitanController:z_velocity")
+properties/9/spawn = true
+properties/9/sync = true
+properties/9/watch = false
+properties/10/path = NodePath("TitanController:z_position")
+properties/10/spawn = true
+properties/10/sync = true
+properties/10/watch = false
 
 [node name="Titan" type="Node2D" node_paths=PackedStringArray("titan_controller", "titan_camera", "titan_aim_manager", "titan_animator", "titan_inventory_manager", "titan_input_controller", "titan_visual_manager")]
 script = ExtResource("1_agx6v")

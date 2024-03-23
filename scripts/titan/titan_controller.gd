@@ -2,11 +2,10 @@ extends CharacterBody2D
 
 class_name TitanController;
 
-var z_velocity: float = 0;
-var z_position: float = 0;
-
 @onready var animator: TitanAnimator = $TitanAnimator;
 
+@export var z_velocity: float = 0;
+@export var z_position: float = 0;
 @export var true_position: Vector2 = position;
 @export var move_speed: float = 3500;
 @export var jump_force: float = 100;
