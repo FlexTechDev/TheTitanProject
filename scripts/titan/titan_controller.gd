@@ -4,15 +4,15 @@ class_name TitanController;
 
 var z_velocity: float = 0;
 var z_position: float = 0;
-var in_air: bool = false;
-var on_floor: bool = true;
-var last_movement_input: Vector2 = Vector2.ZERO;
 
-@onready var true_position: Vector2 = position;
 @onready var animator: TitanAnimator = $TitanAnimator;
 
+@export var true_position: Vector2 = position;
 @export var move_speed: float = 3500;
 @export var jump_force: float = 100;
+@export var in_air: bool = false;
+@export var on_floor: bool = true;
+@export var last_movement_input: Vector2 = Vector2.ZERO;
 
 func try_jump() -> void:
 	if(on_floor):
@@ -39,15 +39,6 @@ func _physics_process(delta: float) -> void:
 	position.y = true_position.y - z_position;
 
 func _process(delta: float) -> void:
-	if(last_movement_input == Vector2.ZERO and animator.current_state != TitanAnimator.TITAN_STATE.IDLE):
-		animator.set_state(TitanAnimator.TITAN_STATE.IDLE);
-	
-	if(last_movement_input != Vector2.ZERO):
-		animator.set_state(TitanAnimator.TITAN_STATE.RUNNING);
-	
-	if(in_air):
-		animator.set_state(TitanAnimator.TITAN_STATE.IN_AIR);
-	
 	move_and_slide();
 	
 	true_position += velocity * delta;

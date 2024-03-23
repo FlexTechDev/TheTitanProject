@@ -1,3 +1,6 @@
+Node
+MultiplayerSpawner
+MultiplayerSynchronizer
 TextureRect
 CollisionShape2D
 Area2D
@@ -16,7 +19,6 @@ Node2D
 DirectionalLight2D
 LightOccluder2D
 OccluderInstance3D
-Node
 CanvasModulate
 TitanComponentManager
 UIInventoryManager
@@ -28,5 +30,3 @@ AspectRatioContainer
 Container
 GPUParticles2D
 Trail2D
-Line2D
-TitanHealthComponent

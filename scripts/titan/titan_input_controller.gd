@@ -11,6 +11,9 @@ signal interacted;
 @export var titan_inventory_manager: TitanInventoryManager;
 
 func _input(event: InputEvent) -> void:
+	if(!is_multiplayer_authority()):
+		return;
+	
 	if(event is InputEventKey):
 		var input_vector: Vector2 = Vector2(Input.get_axis("left","right"),Input.get_axis("up","down")).normalized();
 		

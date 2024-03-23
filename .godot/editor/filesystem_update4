@@ -26,3 +26,7 @@ res://scripts/titan/titan_component_manager.gd
 res://scripts/titan/titan_inventory_manager.gd
 res://scripts/gameplay/ship_mission_manager.gd
 res://scripts/ui/ui_inventory_manager.gd
+res://scenes/player/titan.tscn
+res://scripts/titan/titan_camera_controller.gd
+res://scripts/titan/titan_controller.gd
+res://scripts/titan/titan_animator.gd

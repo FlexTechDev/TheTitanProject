@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://msij3nha7mdy"]
 
-[ext_resource type="PackedScene" uid="uid://ccf4pxcrfwi4q" path="res://scenes/player/player.tscn" id="1_yl2nx"]
+[ext_resource type="PackedScene" uid="uid://ccf4pxcrfwi4q" path="res://scenes/player/titan.tscn" id="1_yl2nx"]
 [ext_resource type="PackedScene" uid="uid://dv77u831emsml" path="res://scenes/weapons/rifles/AA12AssaultRifle.tscn" id="2_26055"]
 [ext_resource type="PackedScene" uid="uid://c7bn6l80vmnm4" path="res://scenes/weapons/rifles/BB32BattleRifle.tscn" id="4_s2wxu"]
 [ext_resource type="PackedScene" uid="uid://dvwck2m2ehivn" path="res://scenes/weapons/shotguns/BP2Shotgun.tscn" id="5_pc1ff"]

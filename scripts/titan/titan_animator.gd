@@ -6,6 +6,8 @@ class_name TitanAnimator;
 @onready var right_hand: Node2D = $RightHand;
 @onready var left_hand: Node2D = $LeftHand;
 
+@export var titan_controller: TitanController;
+
 enum TITAN_STATE
 {
 	IDLE,
@@ -19,12 +21,24 @@ var last_x_scale: float = 1;
 var current_state: TITAN_STATE;
 
 func _process(delta: float) -> void:
+	if(titan_controller.last_movement_input == Vector2.ZERO and current_state != TitanAnimator.TITAN_STATE.IDLE):
+		set_state(TitanAnimator.TITAN_STATE.IDLE);
+	
+	if(titan_controller.last_movement_input != Vector2.ZERO):
+		set_state(TitanAnimator.TITAN_STATE.RUNNING);
+	
+	if(titan_controller.in_air):
+		set_state(TitanAnimator.TITAN_STATE.IN_AIR);
+	
 	if(titan_inventory_manager.active_weapon != null):
 		left_hand.global_position = titan_inventory_manager.active_weapon.left_hand_position.global_position;
 		right_hand.global_position = titan_inventory_manager.active_weapon.right_hand_position.global_position;
 	else:
 		left_hand.position = Vector2(-5, 6);
 		right_hand.position = Vector2(5, 6);
+	
+	if(!is_multiplayer_authority()):
+		return;
 	
 	var direction_to_mouse: Vector2 = get_parent().global_position - get_global_mouse_position();
 	if(direction_to_mouse.x > 0 and last_x_scale == 1):

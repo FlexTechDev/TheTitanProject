@@ -9,3 +9,8 @@ class_name TitanComponentManager
 @export var titan_inventory_manager: TitanInventoryManager;
 @export var titan_input_controller: TitanInputController;
 @export var titan_visual_manager: TitanVisualManager;
+
+func _ready() -> void:
+	set_multiplayer_authority(name.to_int());
+	
+	print(is_multiplayer_authority());
