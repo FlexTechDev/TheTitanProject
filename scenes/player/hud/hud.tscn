@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://cvs3wd8s4d7hu"]
+[gd_scene load_steps=6 format=3 uid="uid://cvs3wd8s4d7hu"]
 
 [ext_resource type="Theme" uid="uid://c673y0fej1vps" path="res://scenes/ui/default_theme.tres" id="1_gc0l2"]
 [ext_resource type="Texture2D" uid="uid://dbpkoblf1i3po" path="res://assets/ui/hud/weapon_panel.png" id="1_ris5u"]
 [ext_resource type="Script" path="res://scripts/ui/ui_inventory_manager.gd" id="3_xych6"]
+[ext_resource type="Texture2D" uid="uid://d38q87ax4m40r" path="res://assets/ui/hud/grenade_icon.png" id="4_3epu2"]
+[ext_resource type="Texture2D" uid="uid://cfoqw5fmm0sup" path="res://assets/ui/hud/mag_icon.png" id="5_g8jqv"]
 
 [node name="hud" type="CanvasLayer"]
 
@@ -72,3 +74,23 @@ offset_top = 1.05901
 offset_right = 39.8816
 offset_bottom = 41.059
 scale = Vector2(0.721036, 0.721036)
+
+[node name="GrenadeTexture" type="TextureRect" parent="Control/Container/TextureRect"]
+modulate = Color(100, 100, 100, 1)
+layout_mode = 0
+offset_left = 18.332
+offset_top = 1.27185
+offset_right = 58.332
+offset_bottom = 41.2718
+scale = Vector2(0.721036, 0.721036)
+texture = ExtResource("4_3epu2")
+
+[node name="MagTexture" type="TextureRect" parent="Control/Container/TextureRect"]
+modulate = Color(100, 100, 100, 1)
+layout_mode = 0
+offset_left = 32.132
+offset_top = 1.27185
+offset_right = 72.132
+offset_bottom = 41.2718
+scale = Vector2(0.721036, 0.721036)
+texture = ExtResource("5_g8jqv")

@@ -24,3 +24,5 @@ res://scenes/ship/holo_table.tscn
 res://scripts/multiplayer/ship_lobby_manager.gd
 res://scripts/titan/titan_component_manager.gd
 res://scripts/titan/titan_inventory_manager.gd
+res://scripts/gameplay/ship_mission_manager.gd
+res://scripts/ui/ui_inventory_manager.gd

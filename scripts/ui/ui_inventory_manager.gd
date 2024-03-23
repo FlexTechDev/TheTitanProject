@@ -19,13 +19,15 @@ func _ready() -> void:
 func _on_gun_reloaded() -> void:
 	if(current_weapon.weapon_function.get("num_mags") != null):
 		if(current_weapon.weapon_function.num_mags > 0):
+			$MagTexture.modulate = Color.WHITE;
 			mag_number.text = str(current_weapon.weapon_function.num_mags - 1);
 
 func _on_gun_fire() -> void:
 	pass
 
 func _on_gun_fire_ended() -> void:
-	pass
+	var mag_percentage: float = float(current_weapon.weapon_function.current_ammo)/float(current_weapon.weapon_function.mag_ammo);
+	$MagTexture.modulate = lerp(Color.INDIAN_RED, Color.WHITE, mag_percentage);
 
 func _on_gun_picked_up(active_weapon: WeaponController) -> void:
 	weapon_texture.texture = active_weapon.sprite.texture;
@@ -33,7 +35,11 @@ func _on_gun_picked_up(active_weapon: WeaponController) -> void:
 	
 	if(current_weapon.weapon_function.get("num_mags") != null):
 		mag_number.text = str(current_weapon.weapon_function.num_mags);
+		var mag_percentage: float = float(current_weapon.weapon_function.current_ammo)/float(current_weapon.weapon_function.mag_ammo);
+		$MagTexture.modulate = lerp(Color.INDIAN_RED, Color.WHITE, mag_percentage);
 
 func _on_gun_dropped() -> void:
 	weapon_texture.texture = null;
+	mag_number.text = "0";
 	current_weapon = null;
+	$MagTexture.modulate = Color.WHITE

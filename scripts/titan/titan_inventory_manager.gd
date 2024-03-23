@@ -37,17 +37,19 @@ func _on_area_entered(body: Area2D) -> void:
 		weapons_in_range.append(body);
 
 func _on_area_exited(body: Area2D) -> void:
-	if(body == pickupable_weapon):
-		pickupable_weapon.remove_child(pick_up_label);
-		add_child(pick_up_label);
+	if(body is WeaponController):
+		if(body == pickupable_weapon):
+			if(pick_up_label.get_parent() != self):
+				pickupable_weapon.remove_child(pick_up_label);
+				add_child(pick_up_label);
+			
+			pickupable_weapon = null;
+			
+			pick_up_label.visible = false;
 		
-		pickupable_weapon = null;
-		
-		pick_up_label.visible = false;
-	
-	if(weapons_in_range.has(body)):
-		var index: int = weapons_in_range.find(body);
-		weapons_in_range.remove_at(index);
+		if(weapons_in_range.has(body)):
+			var index: int = weapons_in_range.find(body);
+			weapons_in_range.remove_at(index);
 
 func _process(delta: float) -> void:
 	for weapon in weapons_in_range:

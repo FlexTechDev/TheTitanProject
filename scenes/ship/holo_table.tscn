@@ -1,13 +1,27 @@
-[gd_scene load_steps=4 format=3 uid="uid://dfedu4vxopodj"]
+[gd_scene load_steps=9 format=3 uid="uid://dfedu4vxopodj"]
 
+[ext_resource type="Script" path="res://scripts/gameplay/ship_mission_manager.gd" id="1_4cyjv"]
 [ext_resource type="Texture2D" uid="uid://dcflt5g5p6i8x" path="res://assets/levels/holo_table.png" id="1_mv7dt"]
 [ext_resource type="Texture2D" uid="uid://cwdx68kc6tjjn" path="res://assets/ui/light.png" id="2_0kvyf"]
+[ext_resource type="Theme" uid="uid://c673y0fej1vps" path="res://scenes/ui/default_theme.tres" id="4_0g750"]
+[ext_resource type="FontFile" uid="uid://dcbdwjgm4omtp" path="res://scenes/player/hud/retro_computer_personal_use.ttf" id="5_aa4jn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_siguy"]
 size = Vector2(32, 7)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_pif1i"]
+radius = 45.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hjjsf"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+
 [node name="holo_table" type="StaticBody2D"]
 z_index = -2
+script = ExtResource("1_4cyjv")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -21,3 +35,28 @@ texture = ExtResource("2_0kvyf")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -3.5)
 shape = SubResource("RectangleShape2D_siguy")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 4)
+shape = SubResource("CircleShape2D_pif1i")
+
+[node name="Label" type="Button" parent="."]
+visible = false
+texture_filter = 1
+offset_left = -10.0
+offset_top = 17.0
+offset_right = 89.0
+offset_bottom = 47.0
+scale = Vector2(0.20981, 0.20981)
+theme = ExtResource("4_0g750")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("5_aa4jn")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_hjjsf")
+disabled = true
+text = "E: use"
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_body_exited"]
