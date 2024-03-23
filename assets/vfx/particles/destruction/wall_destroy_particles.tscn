@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://de8chcpaxwsq7"]
+
+[ext_resource type="Script" path="res://scripts/misc/particles_destroy.gd" id="1_5noo3"]
+[ext_resource type="Texture2D" uid="uid://sqhcs1776ibp" path="res://assets/levels/grasslands/wall_particle.png" id="1_mhmc2"]
+
+[sub_resource type="Curve" id="Curve_ep86a"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_gkp5c"]
+curve = SubResource("Curve_ep86a")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6pdkl"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 25.0
+direction = Vector3(0, -1, 0)
+initial_velocity_min = 100.0
+initial_velocity_max = 100.0
+angular_velocity_min = 100.0
+angular_velocity_max = 100.0
+gravity = Vector3(0, 200, 0)
+scale_min = 0.5
+scale_max = 0.7
+scale_curve = SubResource("CurveTexture_gkp5c")
+collision_mode = 1
+collision_friction = 0.2
+collision_bounce = 0.5
+
+[node name="WallDestroyParticles" type="GPUParticles2D"]
+texture_filter = 1
+emitting = false
+amount = 25
+process_material = SubResource("ParticleProcessMaterial_6pdkl")
+texture = ExtResource("1_mhmc2")
+one_shot = true
+explosiveness = 1.0
+script = ExtResource("1_5noo3")

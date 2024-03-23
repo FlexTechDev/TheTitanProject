@@ -51,7 +51,8 @@ func fire(weapon_controller: WeaponController) -> void:
 		return;
 	
 	var direction = Vector2(cos(weapon_controller.global_rotation), sin(weapon_controller.global_rotation));
-	weapon_controller.parent_titan_camera.shake(40, -direction);
+	if(weapon_controller.parent_titan_camera != null):
+			weapon_controller.parent_titan_camera.shake(40, -direction);
 	
 	var muzzle_flash_instance: GPUParticles2D = muzzle_flash.instantiate();
 	weapon_controller.get_tree().current_scene.add_child(muzzle_flash_instance);
@@ -73,5 +74,9 @@ func fire(weapon_controller: WeaponController) -> void:
 		if(raycast.get_collider() is DummyController):
 			var health_component: TitanHealthComponent = raycast.get_collider().get_node("TitanHealthComponent");
 			health_component.take_damage(40);
+		
+		if(raycast.get_collider() is DestructableTileMap):
+			var tiles: DestructableTileMap = raycast.get_collider();
+			tiles.destroy_tiles_at_point(raycast.get_collision_point(), 1.5);
 	else:
 		railgun_bullet_instance.place(weapon_controller.barrel_location.global_position, weapon_controller.barrel_location.global_position + (direction * raycast.target_position.length()), 2.5);

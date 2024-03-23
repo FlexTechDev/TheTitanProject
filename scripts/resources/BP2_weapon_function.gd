@@ -29,7 +29,8 @@ func _start_shoot(weapon_controller: WeaponController) -> void:
 	shell_instance.emitting = true;
 	
 	var direction = Vector2(cos(weapon_controller.global_rotation), sin(weapon_controller.global_rotation));
-	weapon_controller.parent_titan_camera.shake(10, -direction);
+	if(weapon_controller.parent_titan_camera != null):
+			weapon_controller.parent_titan_camera.shake(10, -direction);
 		
 	var muzzle_flash_instance: GPUParticles2D = muzzle_flash.instantiate();
 	weapon_controller.get_tree().current_scene.add_child(muzzle_flash_instance);

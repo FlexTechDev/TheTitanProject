@@ -1,3 +1,6 @@
+GPUParticles2D
+DestructableTileMap
+TileMap
 TitanGameSettingsManager
 FriendPanel
 HSeparator
@@ -10,5 +13,3 @@ Button
 HBoxContainer
 Label
 VScrollBar
-ScrollContainer
-Control

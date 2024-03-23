@@ -26,15 +26,13 @@ point_count = 3
 curve = SubResource("Curve_8ggpm")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_5jmkv"]
+particle_flag_disable_z = true
 emission_shape = 1
 emission_sphere_radius = 3.0
-particle_flag_disable_z = true
 spread = 35.0
-gravity = Vector3(0, 0, 0)
 initial_velocity_min = 70.0
 initial_velocity_max = 80.0
-orbit_velocity_min = 0.0
-orbit_velocity_max = 0.0
+gravity = Vector3(0, 0, 0)
 linear_accel_curve = SubResource("CurveTexture_3q2qc")
 scale_curve = SubResource("CurveTexture_i8y6u")
 color_ramp = SubResource("GradientTexture1D_ainaj")

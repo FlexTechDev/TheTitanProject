@@ -1,3 +1,4 @@
+TileSet
 SpriteFrames
 Theme
 Environment

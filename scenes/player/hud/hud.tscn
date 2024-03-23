@@ -98,7 +98,7 @@ texture = ExtResource("5_g8jqv")
 
 [node name="TabContainer" type="TabContainer" parent="Control"]
 visible = false
-self_modulate = Color(0.129412, 0.129412, 0.129412, 0.466667)
+self_modulate = Color(0.129412, 0.129412, 0.129412, 0.819608)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
