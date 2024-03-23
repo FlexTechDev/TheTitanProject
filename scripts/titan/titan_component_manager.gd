@@ -11,4 +11,7 @@ class_name TitanComponentManager
 @export var titan_visual_manager: TitanVisualManager;
 
 func _ready() -> void:
+	if(multiplayer.multiplayer_peer.get_connection_status() != multiplayer.multiplayer_peer.CONNECTION_DISCONNECTED):
+		return;
+	
 	set_multiplayer_authority(name.to_int());
