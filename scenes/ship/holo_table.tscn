@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://dfedu4vxopodj"]
+[gd_scene load_steps=10 format=3 uid="uid://dfedu4vxopodj"]
 
 [ext_resource type="Script" path="res://scripts/gameplay/ship_mission_manager.gd" id="1_4cyjv"]
 [ext_resource type="Texture2D" uid="uid://dcflt5g5p6i8x" path="res://assets/levels/holo_table.png" id="1_mv7dt"]
 [ext_resource type="Texture2D" uid="uid://cwdx68kc6tjjn" path="res://assets/ui/light.png" id="2_0kvyf"]
 [ext_resource type="Theme" uid="uid://c673y0fej1vps" path="res://scenes/ui/default_theme.tres" id="4_0g750"]
 [ext_resource type="FontFile" uid="uid://dcbdwjgm4omtp" path="res://scenes/player/hud/retro_computer_personal_use.ttf" id="5_aa4jn"]
+[ext_resource type="PackedScene" uid="uid://2jgha35sfwad" path="res://scenes/ship/holotable_ui.tscn" id="6_q4cvo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_siguy"]
 size = Vector2(32, 7)
@@ -57,6 +58,8 @@ theme_override_fonts/font = ExtResource("5_aa4jn")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_hjjsf")
 disabled = true
 text = "E: use"
+
+[node name="HolotableUi" parent="." instance=ExtResource("6_q4cvo")]
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_body_exited"]

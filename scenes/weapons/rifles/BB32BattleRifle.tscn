@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c7bn6l80vmnm4"]
+[gd_scene load_steps=9 format=3 uid="uid://c7bn6l80vmnm4"]
 
 [ext_resource type="Script" path="res://scripts/weapons/weapon_controller.gd" id="1_l5gk6"]
 [ext_resource type="Script" path="res://scripts/resources/BB32_weapon_function.gd" id="2_57env"]
@@ -15,9 +15,6 @@ muzzle_flash = ExtResource("3_sui6l")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xbb1h"]
 size = Vector2(15, 6)
-
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_u4q4e"]
-polygon = PackedVector2Array(-8, -3, 7, -3, 7, 3, -8, 3)
 
 [node name="BB32BattleRifle" type="Area2D" node_paths=PackedStringArray("chamber_location", "barrel_location", "right_hand_position", "left_hand_position")]
 script = ExtResource("1_l5gk6")
@@ -46,6 +43,3 @@ position = Vector2(4, 2)
 
 [node name="LeftHandPosition" type="Node2D" parent="."]
 position = Vector2(-2, 2)
-
-[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
-occluder = SubResource("OccluderPolygon2D_u4q4e")

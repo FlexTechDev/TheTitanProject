@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://2jgha35sfwad"]
+
+[ext_resource type="Theme" uid="uid://c673y0fej1vps" path="res://scenes/ui/default_theme.tres" id="1_h2yne"]
+
+[node name="HolotableUi" type="CanvasLayer"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_h2yne")

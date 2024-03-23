@@ -37,7 +37,7 @@ func _process(delta: float) -> void:
 		left_hand.position = Vector2(-5, 6);
 		right_hand.position = Vector2(5, 6);
 	
-	if(!is_multiplayer_authority()):
+	if(!is_multiplayer_authority() and get_tree().current_scene.name != "playground"):
 		return;
 	
 	var direction_to_mouse: Vector2 = get_parent().global_position - get_global_mouse_position();

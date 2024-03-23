@@ -11,7 +11,7 @@ signal interacted;
 @export var titan_inventory_manager: TitanInventoryManager;
 
 func _input(event: InputEvent) -> void:
-	if(!is_multiplayer_authority()):
+	if(!is_multiplayer_authority() and get_tree().current_scene.name != "playground"):
 		return;
 	
 	if(event is InputEventKey):

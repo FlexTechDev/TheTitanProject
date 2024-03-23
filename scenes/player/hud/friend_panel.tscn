@@ -1,0 +1,103 @@
+[gd_scene load_steps=9 format=3 uid="uid://brh2b5l22wkax"]
+
+[ext_resource type="Theme" uid="uid://c673y0fej1vps" path="res://scenes/ui/default_theme.tres" id="1_1pjjy"]
+[ext_resource type="Script" path="res://scripts/ui/friend_panel.gd" id="1_ou3h2"]
+[ext_resource type="FontFile" uid="uid://dcbdwjgm4omtp" path="res://scenes/player/hud/retro_computer_personal_use.ttf" id="2_p68x6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nty5j"]
+bg_color = Color(0.117647, 0.117647, 0.117647, 1)
+border_width_top = 2
+border_width_bottom = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aufp4"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.3)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hmh2t"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.117647, 0.117647, 0.117647, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.309804, 0.952941, 0, 1)
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1yqx6"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 0.6)
+corner_detail = 5
+
+[sub_resource type="Theme" id="Theme_fosbj"]
+Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
+Button/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/font_outline_color = Color(1, 1, 1, 1)
+Button/colors/font_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_disabled_color = Color(1, 1, 1, 0.4)
+Button/colors/icon_focus_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_normal_color = Color(1, 1, 1, 1)
+Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
+Button/constants/h_separation = 4
+Button/constants/icon_max_width = 0
+Button/constants/outline_size = 0
+Button/font_sizes/font_size = 16
+Button/fonts/font = ExtResource("2_p68x6")
+Button/styles/disabled = SubResource("StyleBoxFlat_aufp4")
+Button/styles/normal = SubResource("StyleBoxFlat_hmh2t")
+Button/styles/pressed = SubResource("StyleBoxFlat_1yqx6")
+
+[node name="FriendPanel" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ou3h2")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 2
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(7.88, 0.76)
+theme_override_styles/panel = SubResource("StyleBoxFlat_nty5j")
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 2
+offset_left = 4.0
+offset_top = 3.0
+offset_right = 145.0
+offset_bottom = 25.0
+theme = ExtResource("1_1pjjy")
+text = "friend name"
+
+[node name="Join" type="Button" parent="."]
+texture_filter = 1
+layout_mode = 2
+offset_left = 321.0
+offset_right = 384.0
+offset_bottom = 30.0
+theme = SubResource("Theme_fosbj")
+text = "join"
+
+[connection signal="pressed" from="Join" to="." method="_on_join_pressed"]

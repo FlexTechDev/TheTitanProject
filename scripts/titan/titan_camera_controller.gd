@@ -2,14 +2,14 @@ extends Camera2D
 
 class_name TitanCamera;
 
-@export var target: TitanController
+@export var target: TitanController;
 @export var lerp_speed: float = 2;
 @export var frozen: bool = false;
 
 func _ready() -> void:
 	await get_tree().create_timer(0.5).timeout;
 	
-	if(!is_multiplayer_authority()):
+	if(!is_multiplayer_authority() and get_tree().current_scene.name != "playground"):
 		enabled = false;
 
 func shake(force: float, bias: Vector2 = Vector2.ONE) -> void:

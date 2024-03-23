@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dvwck2m2ehivn"]
+[gd_scene load_steps=9 format=3 uid="uid://dvwck2m2ehivn"]
 
 [ext_resource type="Script" path="res://scripts/weapons/weapon_controller.gd" id="1_u4slb"]
 [ext_resource type="PackedScene" uid="uid://damcubi446uk7" path="res://scenes/weapons/bullets/standard_pellet.tscn" id="2_jtdkx"]
@@ -15,9 +15,6 @@ muzzle_flash = ExtResource("3_uogv3")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xbb1h"]
 size = Vector2(16, 6)
-
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_5rwvo"]
-polygon = PackedVector2Array(-8, -3, 8, -3, 8, 3, -8, 3)
 
 [node name="BP2Shotgun" type="Area2D" node_paths=PackedStringArray("chamber_location", "barrel_location", "right_hand_position", "left_hand_position")]
 script = ExtResource("1_u4slb")
@@ -45,6 +42,3 @@ position = Vector2(4, 2)
 
 [node name="LeftHandPosition" type="Node2D" parent="."]
 position = Vector2(-2, 2)
-
-[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
-occluder = SubResource("OccluderPolygon2D_5rwvo")

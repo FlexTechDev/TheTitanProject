@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://cvs3wd8s4d7hu"]
+[gd_scene load_steps=7 format=3 uid="uid://cvs3wd8s4d7hu"]
 
 [ext_resource type="Theme" uid="uid://c673y0fej1vps" path="res://scenes/ui/default_theme.tres" id="1_gc0l2"]
 [ext_resource type="Texture2D" uid="uid://dbpkoblf1i3po" path="res://assets/ui/hud/weapon_panel.png" id="1_ris5u"]
 [ext_resource type="Script" path="res://scripts/ui/ui_inventory_manager.gd" id="3_xych6"]
 [ext_resource type="Texture2D" uid="uid://d38q87ax4m40r" path="res://assets/ui/hud/grenade_icon.png" id="4_3epu2"]
 [ext_resource type="Texture2D" uid="uid://cfoqw5fmm0sup" path="res://assets/ui/hud/mag_icon.png" id="5_g8jqv"]
+[ext_resource type="Script" path="res://scripts/ui/titan_game_settings_manager.gd" id="6_uch3v"]
 
 [node name="hud" type="CanvasLayer"]
 
@@ -94,3 +95,25 @@ offset_right = 72.132
 offset_bottom = 41.2718
 scale = Vector2(0.721036, 0.721036)
 texture = ExtResource("5_g8jqv")
+
+[node name="TabContainer" type="TabContainer" parent="Control"]
+visible = false
+self_modulate = Color(0.129412, 0.129412, 0.129412, 0.466667)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("6_uch3v")
+
+[node name="TabBar" type="TabBar" parent="Control/TabContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/TabContainer/TabBar"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 17.0
+offset_right = 55.0
+offset_bottom = 57.0
+theme_override_constants/separation = 50
