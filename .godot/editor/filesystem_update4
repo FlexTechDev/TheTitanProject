@@ -4,6 +4,7 @@ res://scenes/ui/default_theme.tres
 res://shaders/armor_shader.gdshader
 res://assets/titan/titan_frames.tres
 res://assets/titan/dummy_frames.tres
+res://assets/levels/grasslands/stone_wall_tileset.tres
 res://assets/levels/drop_pod_enter_frames.tres
 res://scenes/testing/playground.tscn
 res://scenes/testing/dummy.tscn
@@ -18,12 +19,7 @@ res://scenes/ship/drop_pod_rear_facing.tscn
 res://scenes/ship/holo_table.tscn
 res://scenes/weapons/bullets/standard_bullet.tscn
 res://scenes/player/hud/friend_panel.tscn
-res://scripts/resources/BB32_weapon_function.gd
 res://scenes/levels/grasslands.tscn
-res://assets/levels/grasslands/stone_wall_tileset.tres
-res://scripts/gameplay/destructable_tilemap.gd
-res://scripts/resources/R5_weapon_function.gd
 res://assets/vfx/particles/destruction/wall_destroy_particles.tscn
 res://assets/vfx/particles/muzzle_flashes/blue_muzzle_flash.tscn
-res://scripts/resources/AA12_weapon_function.gd
-res://scripts/resources/BP2_weapon_function.gd
+res://scripts/gameplay/destructable_tilemap.gd

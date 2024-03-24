@@ -26,7 +26,7 @@ anchor_bottom = 1.0
 offset_top = -40.0
 offset_right = 41.0
 grow_vertical = 0
-scale = Vector2(5, 5)
+scale = Vector2(2.32035, 2.32035)
 pivot_offset = Vector2(0.164979, 40.0898)
 
 [node name="TextureRect" type="TextureRect" parent="Control/Container"]
@@ -105,10 +105,12 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_font_sizes/font_size = 0
 script = ExtResource("6_uch3v")
 
 [node name="TabBar" type="TabBar" parent="Control/TabContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control/TabContainer/TabBar"]
 layout_mode = 0
