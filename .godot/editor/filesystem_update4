@@ -1,4 +1,4 @@
-res://scenes/player/titan.tscn
+res://scenes/testing/playground.tscn
 res://scripts/ui/titan_game_settings_manager.gd
 res://scenes/ui/default_theme.tres
 res://shaders/armor_shader.gdshader
@@ -6,7 +6,8 @@ res://assets/titan/titan_frames.tres
 res://assets/titan/dummy_frames.tres
 res://assets/levels/grasslands/stone_wall_tileset.tres
 res://assets/levels/drop_pod_enter_frames.tres
-res://scenes/testing/playground.tscn
+res://scripts/gameplay/destructable_tilemap.gd
+res://scenes/player/titan.tscn
 res://scenes/testing/dummy.tscn
 res://scenes/weapons/rifles/BB32BattleRifle.tscn
 res://scenes/weapons/rifles/AA12AssaultRifle.tscn
@@ -22,4 +23,3 @@ res://scenes/player/hud/friend_panel.tscn
 res://scenes/levels/grasslands.tscn
 res://assets/vfx/particles/destruction/wall_destroy_particles.tscn
 res://assets/vfx/particles/muzzle_flashes/blue_muzzle_flash.tscn
-res://scripts/gameplay/destructable_tilemap.gd

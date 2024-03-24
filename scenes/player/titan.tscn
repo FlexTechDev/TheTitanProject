@@ -201,7 +201,7 @@ titan_controller = NodePath("../TitanController")
 titan_inventory_manager = NodePath("../TitanController/TitanAnimator/HoldingPoint")
 
 [node name="TitanCamera" type="Camera2D" parent="." node_paths=PackedStringArray("target")]
-zoom = Vector2(2, 2)
+zoom = Vector2(2.5, 2.5)
 script = ExtResource("15_qdhfp")
 target = NodePath("../TitanController")
 
