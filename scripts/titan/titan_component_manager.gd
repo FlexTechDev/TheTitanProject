@@ -12,3 +12,7 @@ class_name TitanComponentManager
 
 func _ready() -> void:
 	set_multiplayer_authority(name.to_int());
+	
+	if(!is_multiplayer_authority()):
+		$hud.set_process(false);
+		$hud.visible = false;

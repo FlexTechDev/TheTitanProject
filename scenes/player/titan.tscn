@@ -193,6 +193,7 @@ current_visual_asset = ExtResource("12_k4f4t")
 
 [node name="PointLight2D" type="PointLight2D" parent="TitanController"]
 energy = 0.3
+shadow_enabled = true
 texture = ExtResource("13_y3sjc")
 
 [node name="TitanInputController" type="Node" parent="." node_paths=PackedStringArray("titan_controller", "titan_inventory_manager")]

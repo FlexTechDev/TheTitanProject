@@ -11,6 +11,7 @@ func place(point_a: Vector2, point_b: Vector2, starting_width: float) -> void:
 	light_1 = PointLight2D.new();
 	light_1.texture = load("res://assets/ui/light.png");
 	light_1.color = line.default_color;
+	light_1.shadow_enabled = true;
 	
 	line.add_point(point_a, 0);
 	
@@ -19,7 +20,8 @@ func place(point_a: Vector2, point_b: Vector2, starting_width: float) -> void:
 	
 	light_2 = PointLight2D.new();
 	light_2.texture = load("res://assets/ui/light.png");
-	light_1.color = line.default_color;
+	light_2.color = line.default_color;
+	light_2.shadow_enabled = true;
 	
 	line.add_point(point_b, 1);
 	

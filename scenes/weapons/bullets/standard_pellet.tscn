@@ -39,6 +39,7 @@ length = 7
 [node name="PointLight2D" type="PointLight2D" parent="."]
 color = Color(1, 0.52549, 0.52549, 1)
 energy = 0.3
+shadow_filter_smooth = 20.0
 texture = ExtResource("4_tl5mj")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

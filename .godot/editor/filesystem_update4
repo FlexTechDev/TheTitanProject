@@ -25,3 +25,8 @@ res://assets/vfx/particles/destruction/wall_destroy_particles.tscn
 res://assets/vfx/particles/muzzle_flashes/blue_muzzle_flash.tscn
 res://scenes/weapons/bullets/railgun_shot.tscn
 res://scripts/resources/R5_weapon_function.gd
+res://scripts/multiplayer/ship_lobby_manager.gd
+res://scripts/titan/titan_component_manager.gd
+res://scripts/ui/friend_panel.gd
+res://scripts/weapons/railgun_bullet.gd
+res://scenes/weapons/bullets/standard_pellet.tscn

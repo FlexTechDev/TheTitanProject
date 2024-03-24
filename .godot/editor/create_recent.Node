@@ -1,3 +1,4 @@
+PointLight2D
 GPUParticles2D
 DestructableTileMap
 TileMap
@@ -12,4 +13,3 @@ TabContainer
 Button
 HBoxContainer
 Label
-VScrollBar
