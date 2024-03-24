@@ -23,3 +23,5 @@ res://scenes/player/hud/friend_panel.tscn
 res://scenes/levels/grasslands.tscn
 res://assets/vfx/particles/destruction/wall_destroy_particles.tscn
 res://assets/vfx/particles/muzzle_flashes/blue_muzzle_flash.tscn
+res://scenes/weapons/bullets/railgun_shot.tscn
+res://scripts/resources/R5_weapon_function.gd

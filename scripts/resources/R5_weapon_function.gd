@@ -77,6 +77,6 @@ func fire(weapon_controller: WeaponController) -> void:
 		
 		if(raycast.get_collider() is DestructableTileMap):
 			var tiles: DestructableTileMap = raycast.get_collider();
-			tiles.destroy_tiles_at_point(raycast.get_collision_point(), 1.5);
+			tiles.destroy_tiles_at_point(raycast.get_collision_point(), 2.5);
 	else:
 		railgun_bullet_instance.place(weapon_controller.barrel_location.global_position, weapon_controller.barrel_location.global_position + (direction * raycast.target_position.length()), 2.5);
