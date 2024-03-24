@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://dhsr4vo5pibao"]
+
+[ext_resource type="Script" path="res://scripts/map/planet.gd" id="1_uij4x"]
+[ext_resource type="Texture2D" uid="uid://cft82jwcfrntm" path="res://assets/ui/menu/beta.png" id="2_e5jc6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yaekb"]
+radius = 21.0
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_3g8g4"]
+polygon = PackedVector2Array(0, -16, 10, -14, 15, -6, 15, 6, 10, 14, 0, 16)
+
+[node name="Beta" type="Area2D"]
+script = ExtResource("1_uij4x")
+radius = 100.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_yaekb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_e5jc6")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_3g8g4")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

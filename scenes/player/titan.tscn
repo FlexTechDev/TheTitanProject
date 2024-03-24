@@ -12,7 +12,7 @@
 [ext_resource type="FontFile" uid="uid://dcbdwjgm4omtp" path="res://scenes/player/hud/retro_computer_personal_use.ttf" id="10_wedeq"]
 [ext_resource type="Script" path="res://scripts/titan/titan_visual_manager.gd" id="11_w0o47"]
 [ext_resource type="Resource" uid="uid://d3mvfwp0g51qa" path="res://assets/titan/visuals/default_space_marine.tres" id="12_k4f4t"]
-[ext_resource type="Texture2D" uid="uid://cwdx68kc6tjjn" path="res://assets/ui/light.png" id="13_y3sjc"]
+[ext_resource type="Texture2D" uid="uid://cwdx68kc6tjjn" path="res://assets/vfx/light.png" id="13_sc6x0"]
 [ext_resource type="Script" path="res://scripts/titan/titan_input_controller.gd" id="14_iru0t"]
 [ext_resource type="Script" path="res://scripts/titan/titan_camera_controller.gd" id="15_qdhfp"]
 [ext_resource type="Texture2D" uid="uid://dx0to1mrll173" path="res://assets/ui/crosshair/aim.png" id="16_8sr4m"]
@@ -194,7 +194,7 @@ current_visual_asset = ExtResource("12_k4f4t")
 [node name="PointLight2D" type="PointLight2D" parent="TitanController"]
 energy = 0.3
 shadow_enabled = true
-texture = ExtResource("13_y3sjc")
+texture = ExtResource("13_sc6x0")
 
 [node name="TitanInputController" type="Node" parent="." node_paths=PackedStringArray("titan_controller", "titan_inventory_manager")]
 script = ExtResource("14_iru0t")

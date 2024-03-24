@@ -26,12 +26,11 @@ content_margin_left = 4.0
 content_margin_top = 4.0
 content_margin_right = 4.0
 content_margin_bottom = 4.0
-bg_color = Color(0.117647, 0.117647, 0.117647, 1)
+bg_color = Color(0.117647, 0.117647, 0.117647, 0)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
-border_color = Color(0.309804, 0.952941, 0, 1)
 corner_detail = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1yqx6"]
@@ -92,6 +91,7 @@ theme = ExtResource("1_1pjjy")
 text = "friend name"
 
 [node name="Join" type="Button" parent="."]
+modulate = Color(0, 0.94902, 0.270588, 1)
 texture_filter = 1
 layout_mode = 2
 offset_left = 321.0
