@@ -1,3 +1,4 @@
+FriendPanel
 Button
 MapListPanel
 VBoxContainer
@@ -12,4 +13,3 @@ MapCamera
 DirectionalLight2D
 PointLight2D
 TextureRect
-LightOccluder2D

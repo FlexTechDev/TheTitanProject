@@ -13,6 +13,6 @@ class_name TitanComponentManager
 func _ready() -> void:
 	set_multiplayer_authority(name.to_int());
 	
-	if(!is_multiplayer_authority()):
+	if(!is_multiplayer_authority() and get_tree().current_scene.name != "playground"):
 		$hud.set_process(false);
 		$hud.visible = false;

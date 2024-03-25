@@ -26,7 +26,7 @@ anchor_bottom = 1.0
 offset_top = -40.0
 offset_right = 41.0
 grow_vertical = 0
-scale = Vector2(2.32035, 2.32035)
+scale = Vector2(4.28259, 4.28259)
 pivot_offset = Vector2(0.164979, 40.0898)
 
 [node name="TextureRect" type="TextureRect" parent="Control/Container"]

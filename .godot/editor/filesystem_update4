@@ -27,3 +27,5 @@ res://scenes/levels/minus_grasslands.tscn
 res://scenes/map/planets/minus.tscn
 res://scenes/map/stars/proxima_a.tscn
 res://scripts/map/map_ship.gd
+res://scripts/titan/titan_component_manager.gd
+res://scenes/player/hud/hud.tscn
