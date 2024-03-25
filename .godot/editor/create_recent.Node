@@ -1,7 +1,8 @@
-FriendPanel
-Button
 MapListPanel
 VBoxContainer
+FriendsListContainer
+FriendPanel
+Button
 Control
 Panel
 CanvasLayer
@@ -11,5 +12,3 @@ ParallaxLayer
 MapShip
 MapCamera
 DirectionalLight2D
-PointLight2D
-TextureRect

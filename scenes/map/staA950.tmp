@@ -118,22 +118,20 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="VBoxContainer" type="Control" parent="CanvasLayer/Control" node_paths=PackedStringArray("map_camera")]
-anchors_preset = 0
-offset_left = 1080.0
-offset_top = 18.0
-offset_right = 1120.0
-offset_bottom = 58.0
-pivot_offset = Vector2(-824, 18)
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control" node_paths=PackedStringArray("map_camera")]
+layout_mode = 0
+offset_left = 68.0
+offset_top = 72.0
+offset_right = 108.0
+offset_bottom = 112.0
 script = ExtResource("10_05wjo")
 map_camera = NodePath("../../../Galaxy/Camera2D")
 
 [node name="FriendsListContainer" type="VBoxContainer" parent="CanvasLayer/Control"]
 layout_mode = 0
-offset_left = 24.0
-offset_top = 25.0
-offset_right = 64.0
-offset_bottom = 65.0
-theme_override_constants/separation = 30
+offset_left = 65.0
+offset_top = 73.0
+offset_right = 105.0
+offset_bottom = 113.0
 script = ExtResource("11_fyop0")
 friend_panel = ExtResource("12_65f4d")

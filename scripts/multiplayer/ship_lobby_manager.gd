@@ -7,9 +7,7 @@ var steam_id: int = 0;
 var steam_username: String = "";
 var lobby_name: String = "";
 
-@export var titans_on_ship: Dictionary;
-@export var titan: PackedScene;
-@export var scene_to_drop_to: PackedScene
+@export var friends_list: FriendsListContainer;
 
 func _init() -> void:
 	OS.set_environment("SteamAppID", str(480));
@@ -35,6 +33,8 @@ func _on_steam_connection_failed() -> void:
 func create_lobby(lobby_name: String) -> void:
 	self.lobby_name = lobby_name;
 	Steam.createLobby(Steam.LOBBY_TYPE_PUBLIC);
+	
+	friends_list.refresh();
 
 func _on_lobby_created(connect: int, lobby_id: int) -> void:
 	self.lobby_id = lobby_id;

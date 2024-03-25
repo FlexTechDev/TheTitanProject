@@ -84,21 +84,21 @@ texture = ExtResource("6_468e3")
 
 [node name="ProximaA" parent="Galaxy" node_paths=PackedStringArray("camera") instance=ExtResource("10_ntwwy")]
 position = Vector2(169, 69)
-scale = Vector2(0.841847, 0.841847)
+scale = Vector2(2.12132, 2.12132)
 camera = NodePath("../Camera2D")
 
 [node name="Minus" parent="Galaxy/ProximaA" node_paths=PackedStringArray("camera") instance=ExtResource("11_w2d5g")]
-position = Vector2(1.18787, 0)
+position = Vector2(0.471405, 0)
 radius = 1.0
 camera = NodePath("../../Camera2D")
 
 [node name="Alpha" parent="Galaxy" node_paths=PackedStringArray("camera") instance=ExtResource("4_50mry")]
 position = Vector2(-216, -105)
-scale = Vector2(0.841847, 0.841847)
+scale = Vector2(2.12132, 2.12132)
 camera = NodePath("../Camera2D")
 
 [node name="Beta" parent="Galaxy/Alpha" node_paths=PackedStringArray("camera") instance=ExtResource("5_eng6e")]
-position = Vector2(0.839966, -0.839943)
+position = Vector2(0.333336, -0.333332)
 scale = Vector2(0.749153, 0.749153)
 angle = 45.0
 radius = 1.0
@@ -124,8 +124,8 @@ offset_left = 1080.0
 offset_top = 18.0
 offset_right = 1120.0
 offset_bottom = 58.0
-pivot_offset = Vector2(-824, 18)
 script = ExtResource("10_05wjo")
+button_distance = null
 map_camera = NodePath("../../../Galaxy/Camera2D")
 
 [node name="FriendsListContainer" type="VBoxContainer" parent="CanvasLayer/Control"]

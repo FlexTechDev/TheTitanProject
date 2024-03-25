@@ -8,7 +8,7 @@
 radius = 24.0208
 
 [node name="Alpha" type="Area2D" node_paths=PackedStringArray("light", "sprite")]
-scale = Vector2(8.48528, 8.48528)
+scale = Vector2(8.48527, 8.48527)
 script = ExtResource("1_3xqfu")
 light = NodePath("PointLight2D")
 sprite = NodePath("Sprite2D")
