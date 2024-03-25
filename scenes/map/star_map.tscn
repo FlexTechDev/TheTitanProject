@@ -60,19 +60,20 @@ expand_mode = 1
 
 [node name="Alpha" parent="Galaxy" node_paths=PackedStringArray("camera") instance=ExtResource("4_50mry")]
 position = Vector2(-328, -125)
+scale = Vector2(0.0701539, 0.0701539)
 camera = NodePath("../Camera2D")
 
 [node name="Beta" parent="Galaxy/Alpha" node_paths=PackedStringArray("camera") instance=ExtResource("5_eng6e")]
-position = Vector2(90.5078, -90.5098)
+position = Vector2(10.0791, -10.0795)
 scale = Vector2(0.749153, 0.749153)
 angle = 45.0
 radius = 1.0
 camera = NodePath("../../Camera2D")
 
 [node name="Beta2" parent="Galaxy/Alpha" node_paths=PackedStringArray("camera") instance=ExtResource("5_eng6e")]
-position = Vector2(-154.066, -204.451)
+position = Vector2(-12.9429, 25.4015)
 scale = Vector2(0.749153, 0.749153)
-angle = 127.0
+angle = 243.0
 radius = 2.0
 camera = NodePath("../../Camera2D")
 

@@ -8,7 +8,7 @@
 radius = 24.0208
 
 [node name="Star" type="Area2D" node_paths=PackedStringArray("light")]
-scale = Vector2(0.0078125, 0.0078125)
+scale = Vector2(0.793701, 0.793701)
 script = ExtResource("1_3xqfu")
 light = NodePath("PointLight2D")
 
@@ -21,7 +21,7 @@ texture = ExtResource("2_euebt")
 shape = SubResource("CircleShape2D_8tq4s")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-energy = 0.2
+energy = 0.0118786
 shadow_enabled = true
 shadow_filter = 2
 texture = ExtResource("3_ghsw4")
