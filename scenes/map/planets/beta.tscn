@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dhsr4vo5pibao"]
+[gd_scene load_steps=6 format=3 uid="uid://dhsr4vo5pibao"]
 
 [ext_resource type="Script" path="res://scripts/map/planet.gd" id="1_uij4x"]
+[ext_resource type="Resource" uid="uid://dr06fax541jk0" path="res://assets/maps/playground_map_data.tres" id="2_bkv34"]
 [ext_resource type="Texture2D" uid="uid://cft82jwcfrntm" path="res://assets/ui/menu/beta.png" id="2_e5jc6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yaekb"]
@@ -12,7 +13,7 @@ polygon = PackedVector2Array(0, -16, 10, -14, 15, -6, 15, 6, 10, 14, 0, 16)
 [node name="Beta" type="Area2D"]
 script = ExtResource("1_uij4x")
 radius = 100.0
-color = null
+maps = Array[Resource("res://scripts/resources/map_data.gd")]([ExtResource("2_bkv34")])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_yaekb")

@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://h4abswr1cu40"]
 
 [ext_resource type="Script" path="res://scripts/weapons/weapon_controller.gd" id="1_p5wjp"]
-[ext_resource type="Script" path="res://scripts/resources/R5_weapon_function.gd" id="2_jo5kr"]
+[ext_resource type="Script" path="res://scripts/resources/weapons/R5_weapon_function.gd" id="2_jo5kr"]
 [ext_resource type="PackedScene" uid="uid://7o534ocnk2ct" path="res://assets/vfx/particles/muzzle_flashes/blue_muzzle_flash.tscn" id="2_xk1xd"]
 [ext_resource type="PackedScene" uid="uid://bgslml4xi8mna" path="res://scenes/weapons/bullets/railgun_shot.tscn" id="3_448hh"]
 [ext_resource type="Texture2D" uid="uid://drbuac3gh5a0v" path="res://assets/weapons/R5/R5Railgun.png" id="4_qmyle"]

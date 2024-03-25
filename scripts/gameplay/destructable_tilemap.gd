@@ -4,7 +4,7 @@ class_name DestructableTileMap;
 
 @export var destruction_particles: PackedScene = preload("res://assets/vfx/particles/destruction/wall_destroy_particles.tscn");
 
-func destroy_tiles_at_point(point: Vector2, range: float) -> void:
+func destroy_tiles_from_point(point: Vector2, range: float) -> void:
 	var hit_cell_location: Vector2i = local_to_map(point);
 	
 	var deleted_cells: Array[Vector2i];

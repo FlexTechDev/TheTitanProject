@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddjiitk6um8iu"]
+
+[ext_resource type="FontFile" uid="uid://dcbdwjgm4omtp" path="res://scenes/player/hud/retro_computer_personal_use.ttf" id="1_u3ukb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kr25k"]
+bg_color = Color(0.0901961, 0.0901961, 0.0901961, 1)
+border_width_top = 2
+border_width_bottom = 2
+
+[node name="MapPanel" type="Button"]
+texture_filter = 1
+offset_right = 91.0
+offset_bottom = 31.0
+theme_override_fonts/font = ExtResource("1_u3ukb")
+theme_override_styles/normal = SubResource("StyleBoxFlat_kr25k")
+text = "map name
+"

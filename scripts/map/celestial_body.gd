@@ -7,17 +7,21 @@ class_name CelestialBody;
 var selectable: bool = false;
 
 @export var light: PointLight2D;
+@export var sprite: Sprite2D;
 @export var camera: MapCamera;
 @export var color: Color = Color.WHITE;
 
 func _process(delta: float) -> void:
+	if(sprite != null):
+		sprite.self_modulate = color;
+	
 	if Engine.is_editor_hint():
 		var sub_viewport: SubViewport = EditorInterface.get_editor_viewport_2d();
-		global_scale = Vector2.ONE/sub_viewport.get_screen_transform().get_scale();
+		global_scale = Vector2.ONE/sub_viewport.get_screen_transform().get_scale() * 1.5;
 		if(light != null):
 			light.energy = clamp(sub_viewport.get_screen_transform().get_scale().length()/150, 0, 0.2);
 	else:
-		global_scale = Vector2.ONE/get_viewport().get_camera_2d().zoom;
+		global_scale = Vector2.ONE/get_viewport().get_camera_2d().zoom * 1.5;
 		if(light != null):
 			light.energy = clamp(get_viewport().get_camera_2d().zoom.length()/150, 0, 0.2);
 

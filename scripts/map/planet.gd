@@ -8,6 +8,7 @@ class_name Planet;
 
 @export var angle: float = 0;
 @export var radius: float = 2;
+@export var maps: Array[MapData];
 
 func _process(delta: float) -> void:
 	if(orbiting_body != null):

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cp51lodr8ld38"
-path="res://.godot/imported/stone_wall.png-e09883c40efa4e313ce51f9a1a5c971d.ctex"
+uid="uid://sqhcs1776ibp"
+path="res://.godot/imported/wall_particle.png-c465bd76c73295dcac647bde8abc4440.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/levels/grasslands/stone_wall.png"
-dest_files=["res://.godot/imported/stone_wall.png-e09883c40efa4e313ce51f9a1a5c971d.ctex"]
+source_file="res://assets/levels/minus/wall_particle.png"
+dest_files=["res://.godot/imported/wall_particle.png-c465bd76c73295dcac647bde8abc4440.ctex"]
 
 [params]
 

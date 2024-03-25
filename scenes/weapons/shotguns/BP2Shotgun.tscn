@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/weapons/weapon_controller.gd" id="1_u4slb"]
 [ext_resource type="PackedScene" uid="uid://damcubi446uk7" path="res://scenes/weapons/bullets/standard_pellet.tscn" id="2_jtdkx"]
-[ext_resource type="Script" path="res://scripts/resources/BP2_weapon_function.gd" id="3_43grk"]
+[ext_resource type="Script" path="res://scripts/resources/weapons/BP2_weapon_function.gd" id="3_43grk"]
 [ext_resource type="PackedScene" uid="uid://bydjy5e4eee8l" path="res://assets/vfx/particles/muzzle_flashes/red_muzzle_flash.tscn" id="3_uogv3"]
 [ext_resource type="PackedScene" uid="uid://cg7s0vb538pku" path="res://assets/vfx/particles/ejects/standard_shell.tscn" id="5_7f8wk"]
 [ext_resource type="Texture2D" uid="uid://brji2q01qec0t" path="res://assets/weapons/BP2/BP2Shotgun.png" id="5_sqx2q"]

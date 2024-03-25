@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="MapData" load_steps=3 format=3 uid="uid://dr06fax541jk0"]
+
+[ext_resource type="Script" path="res://scripts/resources/map_data.gd" id="1_gjprl"]
+[ext_resource type="PackedScene" uid="uid://msij3nha7mdy" path="res://scenes/testing/playground.tscn" id="1_o3gf4"]
+
+[resource]
+script = ExtResource("1_gjprl")
+map_scene = ExtResource("1_o3gf4")
+map_name = "Playground"
