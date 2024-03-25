@@ -59,23 +59,26 @@ texture = SubResource("GradientTexture1D_cdpah")
 expand_mode = 1
 
 [node name="Alpha" parent="Galaxy" node_paths=PackedStringArray("camera") instance=ExtResource("4_50mry")]
+modulate = Color(1, 1, 1, 1)
 position = Vector2(-328, -125)
-scale = Vector2(0.0701539, 0.0701539)
+scale = Vector2(0.0078125, 0.0078125)
 camera = NodePath("../Camera2D")
 
 [node name="Beta" parent="Galaxy/Alpha" node_paths=PackedStringArray("camera") instance=ExtResource("5_eng6e")]
-position = Vector2(10.0791, -10.0795)
+position = Vector2(90.5078, -90.5098)
 scale = Vector2(0.749153, 0.749153)
 angle = 45.0
 radius = 1.0
 camera = NodePath("../../Camera2D")
+color = Color(1, 1, 1, 1)
 
 [node name="Beta2" parent="Galaxy/Alpha" node_paths=PackedStringArray("camera") instance=ExtResource("5_eng6e")]
-position = Vector2(-12.9429, 25.4015)
+position = Vector2(-116.223, 228.098)
 scale = Vector2(0.749153, 0.749153)
 angle = 243.0
 radius = 2.0
 camera = NodePath("../../Camera2D")
+color = Color(1, 1, 1, 1)
 
 [node name="MapShip" parent="Galaxy" node_paths=PackedStringArray("camera") instance=ExtResource("7_50ll7")]
 camera = NodePath("../Camera2D")

@@ -17,4 +17,6 @@ func _process(delta: float) -> void:
 		
 		zoom = lerp(zoom, Vector2(150,150), delta * 10);
 	else:
+		global_position = Vector2.ZERO;
+		
 		zoom = lerp(zoom, Vector2(1,1), delta * 10);

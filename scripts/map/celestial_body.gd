@@ -8,6 +8,7 @@ var selectable: bool = false;
 
 @export var light: PointLight2D;
 @export var camera: MapCamera;
+@export var color: Color = Color.WHITE;
 
 func _process(delta: float) -> void:
 	if Engine.is_editor_hint():

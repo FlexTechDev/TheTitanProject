@@ -10,5 +10,4 @@ res://scenes/testing/playground.tscn
 res://scenes/map/stars/alpha.tscn
 res://scenes/map/planets/beta.tscn
 res://scenes/map/map_ship.tscn
-res://scripts/map/map_ship.gd
-res://scripts/map/map_camera.gd
+res://scripts/map/celestial_body.gd
